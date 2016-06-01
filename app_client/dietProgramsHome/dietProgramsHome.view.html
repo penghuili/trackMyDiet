@@ -1,0 +1,14 @@
+<div id="dietProgramsSidebar">
+  <ul>
+    <li><a href="/#/dietPrograms/suggest">Suggest Me a Diet</a><li>
+    <li><p></p></li>
+    <li ng-repeat="dietProgram in vm.data.dietPrograms"><a href="/#/dietPrograms/{{dietProgram._id}}">{{dietProgram.name}}</a></li>
+  </ul>
+</div>
+
+<div class="error">{{ vm.message }}</div>
+
+<div id="dietProgramsContent">
+  <p>{{vm.pageHeader}}</p>
+  <p>{{vm.pageContent}}</p>
+</div>
