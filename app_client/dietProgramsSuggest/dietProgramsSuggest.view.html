@@ -1,0 +1,41 @@
+<div id="dietProgramsSidebar">
+  <ul>
+    <li><a href="/#/dietPrograms/suggest">Suggest Me a Diet</a><li>
+    <li><p></p></li>
+    <li><a href="/#/dietPrograms/weight_watcher">Weight Watcher</a></li>
+    <li><a href="/#/dietPrograms/hrm">HMR Program</a></li>
+  </ul>
+</div>
+
+
+<div id="dietProgramsContent">
+  <p>{{vm.pageHeader}}</p>
+  <form action="" method="get">
+    Your body conditions: <br />
+    Gender 
+    <select>
+      <option value="female">Female</option>
+      <option value="male">Male</option>
+    </select> <br />
+    Age <input type="text" name="age"><br />
+    Weight <input type="text" name="weight"> kg <br />
+    Height <input type="text" name="height"> cm <br /> <br />
+
+    What is your motivation? <br />
+    <input type="checkbox" name="motivation" value="loseWeight">lose weight<br />
+    <input type="checkbox" name="motivation" value="buildingMuscles">building muscles <br />
+    <input type="checkbox" name="motivation" value="keepBodyShape">keep body shape<br />
+    <input type="checkbox" name="motivation" value="motivation1">motivation 1 <br />
+    <input type="checkbox" name="motivation" value="motivation2">motivation 2<br />
+    <input type="checkbox" name="motivation" value="motivation3">motivation 3 <br /><br />
+
+    What is your preferable duration of diet? <br />
+    <input type="radio" name="duration" value="1month">1 month<br />
+    <input type="radio" name="duration" value="6months" checked>6 months<br />
+    <input type="radio" name="duration" value="1year">1 year<br />
+    <input type="radio" name="duration" value="2years">2 years<br />
+    <input type="radio" name="duration" value="morethan2years">more than 2 years<br /><br />
+
+    <input type="submit" value="Suggest me a diet">
+  </form>
+</div>
