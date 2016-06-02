@@ -14,4 +14,3 @@ function dietProgramsHomeCtrl (trackmydietData) {
         vm.message = "Sorry, something's gone wrong, please try again later";
       });
 }
-

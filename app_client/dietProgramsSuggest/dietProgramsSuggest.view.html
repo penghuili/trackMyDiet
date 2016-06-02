@@ -2,8 +2,7 @@
   <ul>
     <li><a href="/#/dietPrograms/suggest">Suggest Me a Diet</a><li>
     <li><p></p></li>
-    <li><a href="/#/dietPrograms/weight_watcher">Weight Watcher</a></li>
-    <li><a href="/#/dietPrograms/hrm">HMR Program</a></li>
+    <li ng-repeat="dietProgram in vm.data.dietPrograms"><a href="/#/dietPrograms/{{dietProgram._id}}">{{dietProgram.name}}</a></li>
   </ul>
 </div>
 

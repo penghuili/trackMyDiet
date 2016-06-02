@@ -17,6 +17,11 @@ function config ($routeProvider, $locationProvider) {
         controller: 'dietProgramsSuggestCtrl',
         controllerAs: 'vm'
       })
+      .when('/dietPrograms/:dietprogramid', {
+        templateUrl: 'dietProgramDetail/dietProgramDetail.view.html',
+        controller: 'dietProgramDetailCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }

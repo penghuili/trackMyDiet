@@ -2,23 +2,22 @@ angular
   .module('trackmydietApp')
   .controller('dietProgramDetailCtrl', dietProgramDetailCtrl);
 
-function dietProgramDetailCtrl ($routeParams, trackmydietData) {
+function dietProgramDetailCtrl (trackmydietData, $routeParams) {
   var vm = this;
-  var vm.dietprogramid = $routeParams.dietprogramid;
   trackmydietData.dietPrograms()
-      .success(function(data) {
-        vm.data.dietPrograms = data;
+      .success(function(data1) {
+        vm.data = {dietPrograms: data1};
       })
       .error(function (e) {
         vm.message = "Sorry, something's gone wrong, please try again later";
       });
-
-  trackmydietData.dietProgramById(vm.dietprogramid)
-      .success(function(data) {
-        vm.data.theDietProgram = data;
+   vm.dietprogramid = $routeParams.dietprogramid;
+   
+     trackmydietData.dietProgramById(vm.dietprogramid)
+      .success(function(data2) {
+        vm.data2 = {dietProgram: data2};
       })
       .error(function (e) {
         vm.message = "Sorry, something's gone wrong, please try again later";
       });
 }
-
