@@ -1,6 +1,6 @@
 <div id="dietProgramsSidebar">
   <ul>
-    <li><a href="/#/dietPrograms/suggest">Suggest Me a Diet</a><li>
+    <li><a href="/#/dietPrograms/suggest">Diet Suggestion</a><li>
     <li><p></p></li>
     <li ng-repeat="dietProgram in vm.data.dietPrograms"><a href="/#/dietPrograms/{{dietProgram._id}}">{{dietProgram.name}}</a></li>
   </ul>
@@ -35,6 +35,6 @@
     <input type="radio" name="duration" value="2years">2 years<br />
     <input type="radio" name="duration" value="morethan2years">more than 2 years<br /><br />
 
-    <input type="submit" value="Suggest me a diet">
+    <input type="submit" value="Suggest diet">
   </form>
 </div>
