@@ -49,3 +49,7 @@
   width: 900px;
   text-align: center;
 }
+
+#intro-header{
+  backgroud-image:url("bootstrap/img/ipad-bg.png");
+}
