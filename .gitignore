@@ -22,3 +22,11 @@ package.json~
 public/stylesheets/style.css~
 app_client/common/directives/footerGeneric/footerGeneric.directive.js~
 app_client/common/directives/footerGeneric/footerGeneric.directive.js~
+app_api/config/passport.js~
+app_client/auth/login/login.controller.js~
+app_client/auth/login/login.view.html~
+app_client/auth/register/register.controller.js~
+app_client/auth/register/register.view.html~
+app_client/common/directives/footerGeneric/footerGeneric.controller.js~
+app_client/common/directives/footerGeneric/footerGeneric.view.html~
+
