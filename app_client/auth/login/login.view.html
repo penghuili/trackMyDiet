@@ -1,0 +1,10 @@
+<h2>{{vm.pageHeader.title}}</h2>
+<p class="lead">Not a member? Please <a href="/#register?page={{ vm.returnPage }}">register</a> first.</p>
+<form ng-submit="vm.onSubmit()">
+        <div>{{ vm.formError }}</div>
+          <label for="email">Email address</label>
+          <input type="email" placeholder="Enter email" ng-model="vm.credentials.email">
+          <label for="password">Password</label>
+          <input type="password" placeholder="Password" ng-model="vm.credentials.password">
+        <button type="submit">Sign in</button>
+</form>

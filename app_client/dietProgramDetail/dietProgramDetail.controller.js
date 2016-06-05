@@ -2,7 +2,7 @@ angular
   .module('trackmydietApp')
   .controller('dietProgramDetailCtrl', dietProgramDetailCtrl);
 
-function dietProgramDetailCtrl (trackmydietData, $routeParams) {
+function dietProgramDetailCtrl ($location, trackmydietData, authentication, $routeParams) {
   var vm = this;
   trackmydietData.dietPrograms()
       .success(function(data1) {
@@ -20,4 +20,11 @@ function dietProgramDetailCtrl (trackmydietData, $routeParams) {
       .error(function (e) {
         vm.message = "Sorry, something's gone wrong, please try again later";
       });
+
+  vm.isLoggedIn = authentication.isLoggedIn();
+  vm.currentPath = $location.path();
+  vm.logout = function() {
+    authentication.logout();
+    $location.path('/');
+  };
 }

@@ -1,0 +1,7 @@
+angular
+.module('trackmydietApp')
+.directive("footerF", function() {
+    return {
+        template : "<h1>Made amjhgkjhcvkg dive!</h1>"
+    };
+});

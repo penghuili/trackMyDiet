@@ -40,3 +40,4 @@ process.on('SIGTERM', function() {
 });
 
 require('./dietPrograms');
+require('./users');
