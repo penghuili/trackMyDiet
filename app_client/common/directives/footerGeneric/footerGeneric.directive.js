@@ -1,9 +1,9 @@
 angular
 .module('trackmydietApp')
-.directive("footerf", footerf);
+.directive("footerGeneric", footerGeneric);
 
-function footerf() {
+function footerGeneric() {
     return {
-        template : "<h1>Made amjhgkjhcvkg dive!</h1>"
+        templateUrl : "common/directives/footerGeneric/footerGeneric.view.html"
     };
 }

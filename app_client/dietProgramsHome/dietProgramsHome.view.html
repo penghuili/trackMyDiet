@@ -1,12 +1,6 @@
-<div id="dietProgramsSidebar">
-  <ul>
-    <li ng-show="vm.isLoggedIn" ng-click="vm.logout()"><a href="">Logout</a><li>
-    <li ng-show="vm.isLoggedIn"><a href="/#/dietPrograms/suggest">Suggest Me a Diet</a><li>
-    <li ng-hide="vm.isLoggedIn"><a href="/#/login?page={{vm.currentPath}}">Login to get Diet Suggestion</a><li>
-    <li><p></p></li>
-    <li ng-repeat="dietProgram in vm.data.dietPrograms"><a href="/#/dietPrograms/{{dietProgram._id}}">{{dietProgram.name}}</a></li>
-  </ul>
-</div>
+<navigation></navigation>
+
+<diet-programs-sidebar></diet-programs-sidebar>
 
 <div class="error">{{ vm.message }}</div>
 
@@ -15,3 +9,4 @@
   <p>{{vm.pageContent}}</p>
 </div>
 
+<footer-generic></footer-generic>
