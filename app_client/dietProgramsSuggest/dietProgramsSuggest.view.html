@@ -1,11 +1,16 @@
 <navigation></navigation>
+<div class="content-section-a">
+<br />
+<div class="container">
+<div class="row">
+<div class="col-md-2">
 <diet-programs-sidebar></diet-programs-sidebar>
-
-
-<div id="dietProgramsContent">
-  <p>{{vm.pageHeader}}</p>
-  <form action="" method="get">
-    Your body conditions: <br />
+</div>
+<div class="col-md-10">
+<div class="error">{{ vm.message }}</div>
+  <h2>{{vm.pageHeader}}</h2>
+  <form role="form" action="" method="get">
+    <h4>Your body conditions:</h4> 
     Gender 
     <select>
       <option value="female">Female</option>
@@ -33,5 +38,10 @@
     <input type="submit" value="Suggest me a diet">
   </form>
 </div>
+</div>
+</div>
+</div>
+</div>
+
 
 <footer-generic></footer-generic>
