@@ -1,42 +1,115 @@
 <navigation></navigation>
+
 <div class="content-section-a">
 <br />
 <div class="container">
-<div class="row">
-<div class="col-md-2">
-<diet-programs-sidebar></diet-programs-sidebar>
-</div>
-<div class="col-md-10">
-<div class="error">{{ vm.message }}</div>
-  <h2>{{vm.pageHeader}}</h2>
-  <form role="form" action="" method="get">
-    <h4>Your body conditions:</h4> 
-    Gender 
-    <select>
-      <option value="female">Female</option>
-      <option value="male">Male</option>
-    </select> <br />
-    Age <input type="text" name="age"><br />
-    Weight <input type="text" name="weight"> kg <br />
-    Height <input type="text" name="height"> cm <br /> <br />
+    <div class="row">
+        <div class="col-md-2">
+            <diet-programs-sidebar></diet-programs-sidebar>
+        </div>
+        <div class="col-md-10">
+            <div class="error">{{ vm.message }}</div>
+            <h2>{{vm.pageHeader}}</h2>
+            <form class="form-horizontal" role="form" action="" method="get">
+                <h4><br />Your body conditions:</h4>
+                <div class="form-group">
+                    <label class="col-md-1" for="gender">Gender: </label>
+                    <div class="col-md-2">
+                        <select class="form-control">
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1" for="age">Age:</label>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1" for="weight">Weight:</label>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control">
+                    </div>
+                    <span>kg</span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1" for="height">Height:</label>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control">
+                    </div>
+                    <span>cm</span>
+                </div>
 
-    What is your motivation? <br />
-    <input type="checkbox" name="motivation" value="loseWeight">lose weight<br />
-    <input type="checkbox" name="motivation" value="buildingMuscles">building muscles <br />
-    <input type="checkbox" name="motivation" value="keepBodyShape">keep body shape<br />
-    <input type="checkbox" name="motivation" value="motivation1">motivation 1 <br />
-    <input type="checkbox" name="motivation" value="motivation2">motivation 2<br />
-    <input type="checkbox" name="motivation" value="motivation3">motivation 3 <br /><br />
+                <h4><br />What is your motivation?</h4>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Lose weight</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Building muscles</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Keep body shape</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Make friends</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Be beautiful</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
 
-    What is your preferable duration of diet? <br />
-    <input type="radio" name="duration" value="1month">1 month<br />
-    <input type="radio" name="duration" value="6months" checked>6 months<br />
-    <input type="radio" name="duration" value="1year">1 year<br />
-    <input type="radio" name="duration" value="2years">2 years<br />
-    <input type="radio" name="duration" value="morethan2years">more than 2 years<br /><br />
+                        <label class="col-md-2">Other reasons:</label>
 
-    <input type="submit" value="Suggest me a diet">
-  </form>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <h4><br />What is your preferable duration of diet? </h4>
+                <div class="radio">
+                    <label><input type="radio" name="optradio">1 month</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio">6 month</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio">1 year</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio">2 years</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio">more than 2 years</label>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-2 pull-right">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+            </form>
 </div>
 </div>
 </div>

@@ -1,3 +1,4 @@
+.idea/
 .env~
 app.js~
 app_api/controllers/authentication.js~
