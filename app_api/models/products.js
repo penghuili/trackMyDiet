@@ -8,6 +8,7 @@ var productSchema = new mongoose.Schema({
     vegan: [Boolean],
     vegetarian: [Boolean],
     halal: [Boolean],
+    dietProgram: [{type: mongoose.Schema.Types.ObjectId, ref: 'DietProgram'}],
     createdOn: {
         type: Date,
         "default": Date.now
