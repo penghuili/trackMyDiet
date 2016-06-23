@@ -22,6 +22,11 @@ function config ($routeProvider, $locationProvider) {
         controller: 'dietProgramsSuggestResultCtrl',
         controllerAs: 'vm'
       })
+        .when('/dietPrograms/linkProducts', {
+          templateUrl: 'dietProgramsLinkProducts/dietProgramsLinkProducts.view.html',
+          controller: 'dietProgramsLinkProductsCtrl',
+          controllerAs: 'vm'
+        })
       .when('/dietPrograms/:dietprogramid', {
         templateUrl: 'dietProgramDetail/dietProgramDetail.view.html',
         controller: 'dietProgramDetailCtrl',
