@@ -17,6 +17,11 @@ function config ($routeProvider, $locationProvider) {
         controller: 'dietProgramsSuggestCtrl',
         controllerAs: 'vm'
       })
+      .when('/dietPrograms/suggest/result', {
+        templateUrl: 'dietProgramsSuggestResult/dietProgramsSuggestResult.view.html',
+        controller: 'dietProgramsSuggestResultCtrl',
+        controllerAs: 'vm'
+      })
       .when('/dietPrograms/:dietprogramid', {
         templateUrl: 'dietProgramDetail/dietProgramDetail.view.html',
         controller: 'dietProgramDetailCtrl',
@@ -30,6 +35,16 @@ function config ($routeProvider, $locationProvider) {
       .when('/login', {
         templateUrl: 'auth/login/login.view.html',
         controller: 'loginCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/mydiet', {
+        templateUrl: 'diaryHome/diaryHome.view.html',
+        controller: 'diaryHomeCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/mydiet/add', {
+        templateUrl: 'diaryAdd/diaryAdd.view.html',
+        controller: 'diaryAddCtrl',
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/'});

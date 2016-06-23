@@ -2,7 +2,7 @@ angular
   .module('trackmydietApp')
   .controller('dietProgramsSuggestCtrl', dietProgramsSuggestCtrl);
 
-function dietProgramsSuggestCtrl ($location, trackmydietData, authentication) {
+function dietProgramsSuggestCtrl () {
   var vm = this;
   vm.pageHeader = "Suggest Me A Diet";
 }
