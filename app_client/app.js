@@ -52,6 +52,11 @@ function config ($routeProvider, $locationProvider) {
         controller: 'diaryAddCtrl',
         controllerAs: 'vm'
       })
+       .when ('/products', {
+         templateUrl: 'productsHome/productsHome.view.html',
+         controller: 'productsHomeCtrl',
+         controllerAs: 'vm'
+       })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }
