@@ -17,6 +17,38 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
+                        {{navvm.currentUser.name}}
+                        <div data-ng-app="demoApp" data-ng-controller="PermissionsForm" class="main">
+                            <form>
+
+<!--
+                                <div ng-if="displayField({{navvm.currentUser.name}})">
+                                    <label for="field1">Field 1</label>
+                                    <input id="field1" value="{{mockData.field1.value}}">
+                                </div>
+-->
+
+                                <div ng-if="{{navvm.isAdmin}}">
+
+                                <!--<div ng-if="true">-->
+                                    <label for="field1">Field 1</label>
+                                    <input id="field1" value="{{mockData.field1.value}}">
+                                </div>
+                                <div ng-if="displayField('field2')">
+                                    <label for="field2">Field 2</label>
+                                    <input id="field2"value="{{mockData.field2.value}}">
+                                </div>
+                                <div ng-if="displayField('field3')">
+                                    <label for="field3">Field 3</label>
+                                    <input id="field3"  value="{{mockData.field3.value}}">
+                                </div>
+                                <div ng-if="displayField('field4')">
+                                    <label for="field4">Field 4</label>
+                                    <input id="field4"  value="{{mockData.field4.value}}">
+                                </div>
+                            </form>
+                        </div>
+
                         <h1>Track My Diet</h1>
                         <h3>Diet it your way!</h3>
                         <hr class="intro-divider">

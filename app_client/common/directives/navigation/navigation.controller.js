@@ -10,6 +10,8 @@
 
     vm.currentUser = authentication.currentUser();
 
+    vm.isAdmin = authentication.isAdmin();
+
     vm.logout = function() {
       authentication.logout();
       $location.path('/');
