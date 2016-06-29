@@ -11,13 +11,11 @@ html, body {
   height: 90%;
   margin: 0 auto -10em;
 }
-
 .footer {
   padding-top: 2.5em;
-  /*padding-left: 1em;*/
   background-color: #f5f5f5;
 }
-
 .footer, .push {
   height: 8em;
 }
+/**/

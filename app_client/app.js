@@ -57,6 +57,11 @@ function config ($routeProvider, $locationProvider) {
          controller: 'productsHomeCtrl',
          controllerAs: 'vm'
        })
+       .when ('/products/:id', {
+         templateUrl: 'productsDetails/productsDetails.view.html',
+         controller: 'productsDetailsCtrl',
+         controllerAs: 'vm'
+       })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }

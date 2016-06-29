@@ -10,8 +10,8 @@
         <div class="col-md-10">
             <div class="error">{{ vm.message }}</div>
             <h2>{{vm.pageHeader}}</h2>
-            <form class="form-horizontal" role="form" action="" method="get">
-                <h4><br />Your body conditions:</h4>
+            <form class="form-horizontal" ng-submit="vm.submitProgram()">
+                <h4>Your body conditions:</h4>
                 <div class="form-group">
                     <label class="col-md-1" for="gender">Gender: </label>
                     <div class="col-md-2">
@@ -41,72 +41,34 @@
                     </div>
                     <span>cm</span>
                 </div>
-
-                <h4><br />What is your motivation?</h4>
                 <div class="form-group">
-                    <div class="col-md-3">
+                    <div>
+                        <h4>What is your motivation?</h4>
                         <div class="checkbox">
-                            <label><input type="checkbox"> Lose weight</label>
+                            <label><input type="checkbox"> Lose weight</label><br>
+                            <label><input type="checkbox"> Building muscles</label><br>
+                            <label><input type="checkbox"> Keep body shape</label><br>
+                            <label><input type="checkbox"> Make friends</label><br>
+                            <label><input type="checkbox"> Be beautiful</label><br>
+                            <label>Other reasons:<input type="text" class="form-control form-inline input"></label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-3">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Building muscles</label>
+                    <div >
+                        <h4>What is your preferable duration of diet? </h4>
+                        <div class="radio">
+                            <label><input type="radio" checked>1 month</label><br>
+                            <label><input type="radio">6 month</label><br>
+                            <label><input type="radio">1 year</label><br>
+                            <label><input type="radio">2 years</label><br>
+                            <label><input type="radio">more than 2 years</label><br>
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Keep body shape</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Make friends</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Be beautiful</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-
-                        <label class="col-md-2">Other reasons:</label>
-
-                    <div class="col-md-6">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-
-                <h4><br />What is your preferable duration of diet? </h4>
-                <div class="radio">
-                    <label><input type="radio" name="optradio" checked>1 month</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio">6 month</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio">1 year</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio">2 years</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio">more than 2 years</label>
-                </div>
-
                 <div class="form-group">
                     <div class="col-md-2 pull-right">
-                        <button type="submit" class="btn btn-default" href="/#/dietPrograms/suggest/result" ng-click="submitProgram()">Suggest Me a Diet</button>
+                        <button type="submit" class="btn btn-default">Suggest Me a Diet</button>
                     </div>
                 </div>
             </form>

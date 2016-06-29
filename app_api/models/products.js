@@ -2,6 +2,8 @@ var mongoose = require( 'mongoose' );
 
 var productSchema = new mongoose.Schema({
     name: {type: String, required: true},
+    brand: [String],
+    image: [String],
     kcal: [Number],
     fat: [String],
     glutenfree: [Boolean],

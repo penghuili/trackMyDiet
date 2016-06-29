@@ -1,0 +1,43 @@
+<navigation></navigation>
+
+<div class="content-section-a">
+    <br>
+    <div class="container">
+        <div class="error">{{vm.message}}</div>
+        <h2>{{vm.pageHeader}}</h2> <hr> <br>
+        <img class="img-rounded img-responsive" ng-src="{{product.image}}"/>
+        <p>{{product.brand}}</p>
+        <p>Calories: {{product.kcal}}</p>
+        <p>Fat: {{product.fat}}</p>
+        <p>
+            <img ng-show="{{product.glutenfree}}" src="/images/glutenfree.png"/>
+            <img ng-show="{{product.vegan}}" src="/images/vegan.png"/>
+            <img ng-show="{{product.vegetarian}}" src="/images/vegetarian.png"/>
+            <img ng-show="{{product.halal}}" src="/images/halal.png"/>
+        </p>
+    </div>
+    <br>
+    <div class="container">
+        <h4>Where To Buy</h4>
+        <table class="table">
+            <thead>
+            <tr class="text-muted">
+                <th>Shop</th>
+                <th>
+                    <a href="#" class="text-muted" ng-click="sortBy('price')">Price<i class="fa fa-fw fa-sort"></i></a>
+                    <span ng-show="propertyName === 'age'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th>Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="shop in shops | orderBy:propertyName:reverse">
+                <td>{{shop.name}}</td>
+                <td>{{shop.price}} <span class="glyphicon glyphicon-euro"></span></td>
+                <td><a href="{{shop.link}}">Buy</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
