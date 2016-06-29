@@ -52,7 +52,22 @@ function config ($routeProvider, $locationProvider) {
         controller: 'diaryAddCtrl',
         controllerAs: 'vm'
       })
-      .otherwise({redirectTo: '/'});
+        .when('/admin', {
+          templateUrl: 'adminHome/adminHome.view.html',
+          controller: 'adminHomeCtrl',
+          controllerAs: 'vm'
+        })
+        .when('/products/add', {
+          templateUrl: 'adminProductAdd/productAdd.view.html',
+          controller: 'productAddCtrl',
+          controllerAs: 'vm'
+        })
+        .when('/dietProgram/add', {
+          templateUrl: 'adminDietProgramAdd/dietProgramAdd.view.html',
+          controller: 'dietProgramAddCtrl',
+          controllerAs: 'vm'
+        })
+        .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }
 
