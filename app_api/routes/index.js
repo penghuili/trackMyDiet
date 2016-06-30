@@ -3,10 +3,14 @@ var router = express.Router();
 var ctrlDietPrograms = require('../controllers/dietPrograms');
 var ctrlAuth = require('../controllers/authentication');
 <<<<<<< HEAD
+<<<<<<< HEAD
 var ctrlProducts = require('../controllers/products');
 =======
 var ctrlDiarys = require('../controllers/diarys');
 >>>>>>> e14448db6d4f1ef78c2d5d58890a7cf467095d72
+=======
+var ctrlDiarys = require('../controllers/diaries');
+>>>>>>> master
 var jwt = require('express-jwt');
 var auth = jwt({
 secret: process.env.JWT_SECRET,
@@ -24,6 +28,6 @@ router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 router.post('/products', ctrlProducts.productCreate);
 
-router.post('/diary/add', ctrlDiarys.diaryCreate);
+router.post('/diary/add', auth, ctrlDiarys.diaryCreate);
 
 module.exports = router;

@@ -44,4 +44,4 @@ require('./users');
 require('./products');
 require('./shopInformation');
 require('./mealplan');
-require('./diary');
+require('./diaries');

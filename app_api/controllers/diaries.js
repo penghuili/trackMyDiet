@@ -11,12 +11,13 @@ module.exports.diaryCreate = function(req, res) {
   getUser(req, res, function (req, res, userEmail) {
   if (userEmail) {
     Diary
-      .findOne({email: userEmail})
+      .findOne({email:userEmail})
       .exec(
         function(err, diary) {
           if (err) {
             sendJSONresponse(res, 400, err);
           } else {
+            console.log(diary);
             doAddDiary(req, res, diary, userEmail);
           }
         }
@@ -72,8 +73,9 @@ var doAddDiary = function(req, res, diary, userEmail) {
         console.log(err);
         sendJSONresponse(res, 400, err);
       } else {
+        console.log(diary);
         thisDiary = diary.diarys[diary.diarys.length - 1];
-        sendJSONresponse(res, 201, thisDiary);
+        sendJSONresponse(res, 201, thisDiary._id);
       }
     });
   }

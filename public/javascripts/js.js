@@ -23,11 +23,11 @@ $(function() {
 		moreFoodBtn.on("click", add);
 	});
 
-	$("#datetimepicker").datetimepicker({
-	  format:'d.m.Y H:i',
-	  inline:true,
-	  lang:'en'
-	});
+	// $("#datetimepicker").datetimepicker({
+	//   format:'d.m.Y H:i',
+	//   inline:true,
+	//   lang:'en'
+	// });
 
 	var ageInput = $("#age");
 	ageInput.on("keyup", function() {
