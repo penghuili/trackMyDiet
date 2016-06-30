@@ -26,15 +26,12 @@ function diaryAddCtrl (trackmydietData) {
 
   vm.doAddDiary = function (formData) {
     console.log("get in doAddDiary");
-      trackmydietData.addDiary({
-        meal : formData.meal,
-        food : formData.food
-      })
+      trackmydietData.addDiary(formData)
         .success(function (data) {
-          vm.formError = "saved";
+          vm.formError = data + " saved";
         })
         .error(function (data) {
-          vm.formError = "Your review has not been saved, please try again";
+          vm.formError = data;
         });
   };
 }
