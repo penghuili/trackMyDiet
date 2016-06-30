@@ -48,6 +48,16 @@ name : payload.name
 };
 }
 };
+    var isAdmin = function(){
+        if(isLoggedIn()){
+            var token = getToken();
+            var payload = JSON.parse($window.atob(token.split('.')[1]));
+            if(payload.name == "admin"){
+                return true;
+            }
+            return false;
+        }
+    };
 
 return {
 currentUser: currentUser,
@@ -56,7 +66,8 @@ getToken : getToken,
 isLoggedIn : isLoggedIn,
 register : register,
 login : login,
-logout : logout
+logout : logout,
+    isAdmin: isAdmin
 };
 
 }

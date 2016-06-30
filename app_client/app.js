@@ -52,6 +52,7 @@ function config ($routeProvider, $locationProvider) {
         controller: 'diaryAddCtrl',
         controllerAs: 'vm'
       })
+<<<<<<< HEAD
        .when ('/products', {
          templateUrl: 'productsHome/productsHome.view.html',
          controller: 'productsHomeCtrl',
@@ -63,6 +64,24 @@ function config ($routeProvider, $locationProvider) {
          controllerAs: 'vm'
        })
       .otherwise({redirectTo: '/'});
+=======
+        .when('/admin', {
+          templateUrl: 'adminHome/adminHome.view.html',
+          controller: 'adminHomeCtrl',
+          controllerAs: 'vm'
+        })
+        .when('/products/add', {
+          templateUrl: 'adminProductAdd/productAdd.view.html',
+          controller: 'productAddCtrl',
+          controllerAs: 'vm'
+        })
+        .when('/dietProgram/add', {
+          templateUrl: 'adminDietProgramAdd/dietProgramAdd.view.html',
+          controller: 'dietProgramAddCtrl',
+          controllerAs: 'vm'
+        })
+        .otherwise({redirectTo: '/'});
+>>>>>>> origin/adminPage
     $locationProvider.html5Mode(true);
   }
 
