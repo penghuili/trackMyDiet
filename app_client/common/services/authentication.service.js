@@ -38,6 +38,16 @@ return false;
 }
 };
 
+var isAdmin = function() {
+	var token = getToken();
+	if(token){
+		var payload = JSON.parse($window.atob(token.split('.')[1]));
+		return payload.name === "admin";
+	} else {
+		return false;
+	}
+};
+
 var currentUser = function() {
 if(isLoggedIn()){
 var token = getToken();
@@ -67,7 +77,11 @@ isLoggedIn : isLoggedIn,
 register : register,
 login : login,
 logout : logout,
+<<<<<<< HEAD
     isAdmin: isAdmin
+=======
+isAdmin: isAdmin
+>>>>>>> e14448db6d4f1ef78c2d5d58890a7cf467095d72
 };
 
 }

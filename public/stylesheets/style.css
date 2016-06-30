@@ -1,3 +1,7 @@
 #shouldbered {
   color: red;
 }
+
+#intro-header{
+  backgroud-image:url("bootstrap/img/ipad-bg.png");
+}
