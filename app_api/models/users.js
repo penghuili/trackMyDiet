@@ -12,6 +12,7 @@ name: {
 type: String,
 required: true
 },
+    dietProgram: [{type: mongoose.Schema.Types.ObjectId, ref: 'DietProgram'}],
 hash: String,
 salt: String
 });

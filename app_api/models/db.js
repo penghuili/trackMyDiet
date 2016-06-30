@@ -41,4 +41,7 @@ process.on('SIGTERM', function() {
 
 require('./dietPrograms');
 require('./users');
+require('./products');
+require('./shopInformation');
+require('./mealplan');
 require('./diary');
