@@ -11,8 +11,13 @@ function trackmydietData ($http) {
     return $http.get('/api/dietPrograms/' + dietprogramid);
   };
 
+  var addProduct = function(product) {
+    return $http.post('/api/products', product);
+  };
+
   return {
     dietPrograms: dietPrograms,
-    dietProgramById: dietProgramById
+    dietProgramById: dietProgramById,
+    addProduct: addProduct
   };
 }

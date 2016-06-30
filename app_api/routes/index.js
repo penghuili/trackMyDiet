@@ -18,6 +18,6 @@ router.get('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsReadOne)
 
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
-router.post('/products/add', ctrlProducts.productCreate);
+router.post('/products', ctrlProducts.productCreate);
 
 module.exports = router;
