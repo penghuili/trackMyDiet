@@ -2,14 +2,10 @@ angular
   .module('trackmydietApp')
   .controller('dietProgramsSuggestCtrl', dietProgramsSuggestCtrl);
 
-function dietProgramsSuggestCtrl (trackmydietData) {
+function dietProgramsSuggestCtrl ($location) {
   var vm = this;
   vm.pageHeader = "Suggest Me A Diet";
-  trackmydietData.dietPrograms()
-      .success(function(data) {
-        vm.data = { dietPrograms: data };
-      })
-      .error(function (e) {
-        vm.message = "Sorry, something's gone wrong, please try again later";
-      });
+  vm.submitProgram = function() {
+  	$location.path("/dietPrograms/suggest/result");
+  };
 }
