@@ -1,6 +1,7 @@
 var passport = require('passport');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var Diary = mongoose.model('Diary');
 
 var sendJSONresponse = function(res, status, content) {
 res.status(status);
@@ -24,6 +25,13 @@ if (err) {
 sendJSONresponse(res, 404, err);
 } else {
 token = user.generateJwt();
+var diary = new Diary();
+diary.email = req.body.email;
+diary.save(function(err) {
+	if(err){
+		sendJSONresponse(res, 404, err);
+	}
+});
 sendJSONresponse(res, 200, {
 "token" : token
 });

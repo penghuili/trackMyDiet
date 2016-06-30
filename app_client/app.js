@@ -47,6 +47,11 @@ function config ($routeProvider, $locationProvider) {
         controller: 'diaryAddCtrl',
         controllerAs: 'vm'
       })
+      .when('/mydiet/plan', {
+        templateUrl: 'diaryMealPlan/diaryMealPlan.view.html',
+        controller: 'diaryMealPlanCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }

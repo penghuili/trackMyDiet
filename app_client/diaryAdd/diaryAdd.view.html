@@ -9,25 +9,35 @@
         </div>
         <div class="col-md-10">
             <h2>{{vm.pageHeader}}</h2>
-            <form class="form-horizontal" role="form" action="" method="get">
+            <p>{{vm.formError}}</p>
+            <form class="form-horizontal" ng-submit="vm.onSubmit()">
                 <div class="form-group">
                     <label class="col-md-1" for="gender">Meal: </label>
                     <div class="col-md-2">
-                        <select class="form-control">
-                            <option value="female">Breakfast</option>
-                            <option value="male">Lunch</option>
-                            <option value="male">Dinner</option>
-                            <option value="male">Snack</option>
+                        <select class="form-control" ng-model="vm.meal">
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="snack">Snack</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="comment">Comment:</label>
-                    <textarea class="form-control" rows="4" id="comment"></textarea>
+                    <label for="food1" class="col-md-2">I have eaten: </label>
+                    <div class="col-md-2">
+                        <input class="form-control" id="food1" ng-model="vm.food1"></input>
+                    </div>
+                    <label for="amount1" class="col-md-2">And how many: </label>
+                    <div class="col-md-2">
+                        <input class="form-control" id="amount1" ng-model="vm.amount1"></input>
+                    </div>
+                        <button type="button" class="btn btn-default btn-sm" id="addMoreFood">
+                          More
+                        </button>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-2 pull-right">
-                        <a type="button" class="btn btn-default" href="/">Finish</a>
+                <div class="form-group" id="submitFood">
+                    <div class="col-md-2 pull-center">
+                        <button type="submit" class="btn btn-default">Finish</button>
                     </div>
                 </div>
             </form>
