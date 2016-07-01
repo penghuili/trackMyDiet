@@ -1,0 +1,31 @@
+<navigation></navigation>
+
+<div class="content-section-a">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <products-sidebar></products-sidebar>
+            </div>
+            <div class="col-md-10">
+                <div class="error">{{vm.message }}</div>
+                <h2>{{vm.pageHeader}}</h2> <hr> <br>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-xs-7" ng-repeat="product in dummyData | filter:search">
+                        <a ng-href="/#/products/{{product.id}}">
+                            <div class="card well well-sm">
+                                <center>
+                                    <img class="img-rounded img-responsive" ng-src="{{product.image}}" style="height: 200px; width:300px"/>
+                                    <div class="card-block">
+                                        <h4 class="card-title text-muted">{{product.name}}</h4>
+                                        <p class="card-title text-muted">{{product.brand}}</p>
+                                    </div>
+                                </center>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -52,31 +52,37 @@ function config ($routeProvider, $locationProvider) {
         controller: 'diaryAddCtrl',
         controllerAs: 'vm'
       })
-<<<<<<< HEAD
-        .when('/admin', {
-          templateUrl: 'adminHome/adminHome.view.html',
-          controller: 'adminHomeCtrl',
-          controllerAs: 'vm'
-        })
-        .when('/products/add', {
-          templateUrl: 'adminProductAdd/productAdd.view.html',
-          controller: 'productAddCtrl',
-          controllerAs: 'vm'
-        })
-        .when('/dietProgram/add', {
-          templateUrl: 'adminDietProgramAdd/dietProgramAdd.view.html',
-          controller: 'dietProgramAddCtrl',
-          controllerAs: 'vm'
-        })
-        .otherwise({redirectTo: '/'});
-=======
       .when('/mydiet/plan', {
         templateUrl: 'diaryMealPlan/diaryMealPlan.view.html',
         controller: 'diaryMealPlanCtrl',
         controllerAs: 'vm'
       })
+      .when('/admin', {
+          templateUrl: 'adminHome/adminHome.view.html',
+          controller: 'adminHomeCtrl',
+          controllerAs: 'vm'
+      })
+      .when ('/products', {
+        templateUrl: 'productsHome/productsHome.view.html',
+        controller: 'productsHomeCtrl',
+        controllerAs: 'vm'
+      })
+      .when ('/products/:id', {
+        templateUrl: 'productsDetails/productsDetails.view.html',
+        controller: 'productsDetailsCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/products/add', {
+          templateUrl: 'adminProductAdd/productAdd.view.html',
+          controller: 'productAddCtrl',
+          controllerAs: 'vm'
+      })
+      .when('/dietProgram/add', {
+          templateUrl: 'adminDietProgramAdd/dietProgramAdd.view.html',
+          controller: 'dietProgramAddCtrl',
+          controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
->>>>>>> e14448db6d4f1ef78c2d5d58890a7cf467095d72
     $locationProvider.html5Mode(true);
   }
 
