@@ -52,6 +52,7 @@ function config ($routeProvider, $locationProvider) {
         controller: 'diaryAddCtrl',
         controllerAs: 'vm'
       })
+<<<<<<< HEAD
         .when('/admin', {
           templateUrl: 'adminHome/adminHome.view.html',
           controller: 'adminHomeCtrl',
@@ -70,6 +71,31 @@ function config ($routeProvider, $locationProvider) {
       .when('/mydiet/plan', {
         templateUrl: 'diaryMealPlan/diaryMealPlan.view.html',
         controller: 'diaryMealPlanCtrl',
+=======
+      .when ('/products', {
+        templateUrl: 'productsHome/productsHome.view.html',
+        controller: 'productsHomeCtrl',
+        controllerAs: 'vm'
+      })
+      .when ('/products/:id', {
+        templateUrl: 'productsDetails/productsDetails.view.html',
+        controller: 'productsDetailsCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/admin', {
+        templateUrl: 'adminHome/adminHome.view.html',
+        controller: 'adminHomeCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/product/add', {
+        templateUrl: 'adminProductAdd/productAdd.view.html',
+        controller: 'productAddCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/dietProgram/add', {
+        templateUrl: 'adminDietProgramAdd/dietProgramAdd.view.html',
+        controller: 'dietProgramAddCtrl',
+>>>>>>> maria
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/'});
