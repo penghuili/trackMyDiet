@@ -15,39 +15,39 @@
                         <div class="form-group">
                             <label class="col-md-1" for="name">Name: </label>
                             <div class="col-md-2">
-                                <input type="text" class="form-control" required ng-model="formData.name">
+                                <input type="text" class="form-control" required ng-model="formData.name" id="name">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-1" for="picutre">Description:</label>
+                            <label class="col-md-1" for="picture">Description:</label>
                             <div class="col-md-2">
-                                <textarea id="text" class="form-control" name="text" rows="4" required></textarea>
+                                <textarea id="text" class="form-control" name="text" rows="4" id="picture" required></textarea>
                             </div>
                         </div>
 
         <div class="form-group">
             <label class="col-md-1" for="minage">Min age:</label>
             <div class="col-md-2">
-                <input type="number" class="form-control" min="6">
+                <input type="number" class="form-control" min="6" id="minage">
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-1" for="maxage">Max age:</label>
             <div class="col-md-2">
-                <input type="number" class="form-control" max="120">
+                <input type="number" class="form-control" max="120" id="maxage">
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-md-1" for="minBMI">Min BMI:</label>
             <div class="col-md-2">
-                <input type="number" class="form-control" min="6">
+                <input type="number" class="form-control" min="6" id="minBMI">
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-1" for="maxBMI">Max BMI:</label>
             <div class="col-md-2">
-                <input type="number" class="form-control" max="50">
+                <input type="number" class="form-control" max="50" id="maxBMI">
             </div>
         </div>
 
@@ -59,7 +59,7 @@
                     <div id="dynamicInput">
                         Food 1<br><input type="text" name="myInputs[]">
                     </div>
-                    <input type="button" value="Add food" onClick="addInput('dynamicInput');">
+                    <input type="button" value="Add food" onClick="addInput('dynamicInput');" id="foodallowed">
                 </form>
             </div>
         </div>

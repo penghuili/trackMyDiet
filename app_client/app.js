@@ -52,13 +52,12 @@ function config ($routeProvider, $locationProvider) {
         controller: 'diaryAddCtrl',
         controllerAs: 'vm'
       })
-<<<<<<< HEAD
         .when('/admin', {
           templateUrl: 'adminHome/adminHome.view.html',
           controller: 'adminHomeCtrl',
           controllerAs: 'vm'
         })
-        .when('/products/add', {
+        .when('/product/add', {
           templateUrl: 'adminProductAdd/productAdd.view.html',
           controller: 'productAddCtrl',
           controllerAs: 'vm'
@@ -68,15 +67,12 @@ function config ($routeProvider, $locationProvider) {
           controller: 'dietProgramAddCtrl',
           controllerAs: 'vm'
         })
-        .otherwise({redirectTo: '/'});
-=======
       .when('/mydiet/plan', {
         templateUrl: 'diaryMealPlan/diaryMealPlan.view.html',
         controller: 'diaryMealPlanCtrl',
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/'});
->>>>>>> e14448db6d4f1ef78c2d5d58890a7cf467095d72
     $locationProvider.html5Mode(true);
   }
 

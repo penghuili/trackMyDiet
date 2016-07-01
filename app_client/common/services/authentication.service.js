@@ -76,12 +76,8 @@ getToken : getToken,
 isLoggedIn : isLoggedIn,
 register : register,
 login : login,
-logout : logout,
-<<<<<<< HEAD
+logout : logout, 
     isAdmin: isAdmin
-=======
-isAdmin: isAdmin
->>>>>>> e14448db6d4f1ef78c2d5d58890a7cf467095d72
 };
 
 }
