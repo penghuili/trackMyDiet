@@ -6,7 +6,7 @@ function trackmydietData ($http, authentication) {
   var dietPrograms = function() {
     return $http.get('/api/dietPrograms');
   };
-  
+
   var dietProgramById = function(dietprogramid) {
     return $http.get('/api/dietPrograms/' + dietprogramid);
   };
@@ -20,9 +20,18 @@ function trackmydietData ($http, authentication) {
      });
   };
 
+  var addDietProgram = function(data) {
+    return $http.post('/api/dietPrograms', data, {
+      headers: {
+        Authorization: 'Bearer ' + authentication.getToken()
+        }
+     });
+  };
+
   return {
     dietPrograms: dietPrograms,
     dietProgramById: dietProgramById,
-    addDiary: addDiary
+    addDiary: addDiary,
+    addDietProgram: addDietProgram
   };
 }

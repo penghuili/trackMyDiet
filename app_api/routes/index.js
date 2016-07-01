@@ -11,7 +11,7 @@ userProperty: 'payload'
 
 
 router.get('/dietPrograms', ctrlDietPrograms.dietProgramsList);
-//router.post('/dietPrograms', ctrlDietPrograms.dietProgramsCreate);
+router.post('/dietPrograms', auth, ctrlDietPrograms.dietProgramCreate);
 router.get('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsReadOne);
 //router.put('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsUpdateOne);
 //router.delete('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsDeleteOne);

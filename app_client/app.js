@@ -57,6 +57,21 @@ function config ($routeProvider, $locationProvider) {
         controller: 'diaryMealPlanCtrl',
         controllerAs: 'vm'
       })
+      .when('/admin', {
+        templateUrl: 'adminHome/adminHome.view.html',
+        controller: 'adminHomeCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/admin/addDietProgram', {
+        templateUrl: 'adminDietProgramAdd/dietProgramAdd.view.html',
+        controller: 'dietProgramAddCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/admin/addProduct', {
+        templateUrl: 'adminProductAdd/productAdd.view.html',
+        controller: 'productAddCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }

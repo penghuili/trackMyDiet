@@ -1,0 +1,94 @@
+<navigation></navigation>
+
+<div class="content-section-a">
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <admin-sidebar></admin-sidebar>
+            </div>
+            <div class="col-md-10"><br />
+                <div class="error">{{ vm.message }}</div>
+                <h2>{{vm.pageHeader}}</h2>
+                <p>{{vm.pageContent}}</p>
+                <!--<form class="form-horizontal" role="form" action="" method="post" ng-submit="vm.save()">-->
+                <!--<form class="form-horizontal" role="form" action="" method="post" data-ng-submit="create()" data-ng-controller="productAddCtrl">-->
+
+                <form name="addProduct" id="addProduct" class="form-horizontal" role="form" ng-submit="vm.onSubmit()">
+                    <div class="form-group">
+                        <label class="col-md-1" for="name">Name: </label>
+                        <div class="col-md-2">
+                            <!--<input type="text" class="form-control" ng-model="vm.product.name" required>-->
+                            <!--<input type="text" class="form-control" data-ng-model="name" required>-->
+                            <input type="text" class="form-control" ng-model="vm.productDetail.name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1" for="kcal">Kcal:</label>
+                        <div class="col-md-2">
+                            <!--<input type="number" class="form-control" min="0" ng-model="vm.product.kcal">-->
+                            <input type="number" class="form-control" min="0" ng-model="vm.productDetail.kcal">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1" for="fat">Fat:</label>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" min="0">
+                        </div>
+                    </div>
+
+                    <h4><br />Choose product characteristics</h4>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Gluten free</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Vegan</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Vegetarian</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Halal</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4><br />Assign product to diet program/s </h4>
+
+                        <span ng-repeat="dietProgram in vm.data.dietPrograms">
+      <label class="checkbox" for="{{dietProgram.name}}">
+        <input type="checkbox" value="{{dietProgram.name}}" ng-checked="selection.indexOf(dietProgram.name) > -1" id="{{dietProgram.name}}" ng-click="toggleSelection(dietProgram.name)"/>
+        {{dietProgram.name}}
+      </label>
+    </span>
+
+
+                     <div ng-repeat="name in selection" class="selected-item">
+                      {{name}}
+                     </div>
+
+
+                    <button type="submit" class="btn btn-default">Add Product</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<footer-generic></footer-generic>
