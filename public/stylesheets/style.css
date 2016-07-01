@@ -1,12 +1,13 @@
 #shouldbered {
   color: red;
 }
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
 
-#intro-header{
-  backgroud-image:url("bootstrap/img/ipad-bg.png");
-}
-=======
+/*#intro-header{*/
+  /*backgroud-image:url("bootstrap/img/ipad-bg.png");*/
+/*}*/
+/*=======*/
+
 /** Footer **/
 html, body {
   height: 100%;
@@ -24,5 +25,4 @@ html, body {
 .footer, .push {
   height: 8em;
 }
-/**/
->>>>>>> maria
+

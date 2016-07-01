@@ -10,22 +10,9 @@
             </button>
         </div>
 
-<<<<<<< HEAD
-      <!--<div data-ng-app="trackmydietApp" data-ng-controller="PermissionsForm">-->
-
-      <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/#/dietPrograms/">Diet Programs</a></li>
-        <li><a href="/#/products/">Products</a></li>
-        <li ng-hide="navvm.isLoggedIn"><a href="/#/login?page=/mydiet/">My Diet</a></li>
-        <li ng-show="navvm.isLoggedIn"><a href="/#/mydiet/">My Diet</a></li>
-        <li ng-show="navvm.isAdmin"><a href="/#/admin/">Admin</a></li>
-      </ul>
-      <!--</div>-->
-=======
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div data-ng-app="trackmydietApp" data-ng-controller="PermissionsForm">
+            <!--<div data-ng-app="trackmydietApp" data-ng-controller="PermissionsForm">-->
             <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="/#/dietPrograms/">Diet Programs</a></li>
@@ -33,9 +20,7 @@
                 <!--<li><a href="/#/community/">Community</a></li>-->
                 <li ng-hide="navvm.isLoggedIn"><a href="/#/login?page=/mydiet/">My Diet</a></li>
                 <li ng-show="navvm.isLoggedIn"><a href="/#/mydiet/">My Diet</a></li>
-                <li ng-if="navvm.isAdmin == true">
-                    <a href="/#/admin/">Admin</a>
-                </li>
+                <li ng-show="navvm.isAdmin"><a href="/#/admin/">Admin</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -44,7 +29,7 @@
                 <li ng-show="navvm.isLoggedIn"><a href="/#/mydiet/">{{navvm.currentUser.name}}</a></li>
                 <li ng-show="navvm.isLoggedIn"><a href="" ng-click="navvm.logout()">Logout</a></li>
             </ul>
-        </div>
+        <!--</div>-->
         </div>
     </div>
 </nav>

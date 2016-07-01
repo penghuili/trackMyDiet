@@ -3,16 +3,13 @@ var router = express.Router();
 var ctrlDietPrograms = require('../controllers/dietPrograms');
 var ctrlAuth = require('../controllers/authentication');
 // var ctrlProducts = require('../controllers/products');
-<<<<<<< HEAD
 var ctrlDiarys = require('../controllers/diaries');
-=======
->>>>>>> maria
+
 var jwt = require('express-jwt');
 var auth = jwt({
 secret: process.env.JWT_SECRET,
 userProperty: 'payload'
 });
-
 
 router.get('/dietPrograms', ctrlDietPrograms.dietProgramsList);
 //router.post('/dietPrograms', ctrlDietPrograms.dietProgramsCreate);
@@ -22,12 +19,7 @@ router.get('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsReadOne)
 
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
-<<<<<<< HEAD
 // router.post('/products', ctrlProducts.productCreate);
-
 router.post('/diary/add', auth, ctrlDiarys.diaryCreate);
-=======
-// router.post('/products/add', ctrlProducts.productCreate);
->>>>>>> maria
 
 module.exports = router;

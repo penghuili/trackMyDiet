@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 angular
   .module('trackmydietApp')
   .controller('dietProgramsHomeCtrl', dietProgramsHomeCtrl);
@@ -10,15 +9,4 @@ function dietProgramsHomeCtrl () {
   vm.pageContent2 = "Track My Diet offers 3 diets that you've probably never tried before and that might help you lose that extra weight.";
   vm.img = "/bootstrap/img/logo.png";
 }
-=======
-angular
-  .module('trackmydietApp')
-  .controller('dietProgramsHomeCtrl', dietProgramsHomeCtrl);
 
-function dietProgramsHomeCtrl () {
-  var vm = this;
-  vm.pageHeader =  "Diet Programs";
-  vm.pageContent = "Here you can have a test to know which diet program suits you. And you can of course browse all the programs.";
-
-}
->>>>>>> maria
