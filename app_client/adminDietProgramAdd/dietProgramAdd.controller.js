@@ -14,6 +14,8 @@ function dietProgramAddCtrl (trackmydietData) {
       vm.formError = "Name and description are required";
       return false;
     } else {
+      console.log("in onSubmit");
+      console.log(vm.formData.name);
       console.log(vm.formData.loseWeight);
       vm.doAddDietProgram(vm.formData);
       }

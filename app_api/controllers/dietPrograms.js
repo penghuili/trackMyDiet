@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var DietProgram = mongoose.model('DietProgram');
+var User = mongoose.model("User");
 
 var sendJSONresponse = function(res, status, content) {
   res.status(status);
@@ -65,14 +66,14 @@ module.exports.dietProgramCreate = function(req, res) {
 
 var getUser = function(req, res, callback) {
   console.log("Finding admin ...");
+  console.log(req.payload.email);
   if (req.payload.email) {
     User
       .findOne({ email : req.payload.email })
       .exec(function(err, user) {
         if (!user) {
-          sendJSONresponse(res, 404, {
-            "message": "User not found"
-          });
+          console.log("no user");
+          sendJSONresponse(res, 404, "User not found");
           return;
         } else if (err) {
           console.log(err);
@@ -87,9 +88,7 @@ var getUser = function(req, res, callback) {
       });
 
   } else {
-    sendJSONresponse(res, 404, {
-      "message": "User not found"
-    });
+    sendJSONresponse(res, 404, "User not found");
     return;
   }
 
@@ -107,9 +106,6 @@ var doAddDietProgram = function(req, res) {
     dietProgram.ageMax = req.body.ageMax;
     dietProgram.BMImin = req.body.BMImin;
     dietProgram.BMImax = req.body.BMImax;
-    dietProgram.pictures = req.body.pictures;
-    dietProgram.foodAllowed = req.body.foodAllowed;
-    dietProgram.recipe = req.body.recipe;
 
     dietProgram.save(function(err, dietProgram) {
       if (err) {
