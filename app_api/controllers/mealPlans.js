@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Diary = mongoose.model('Diary');
+var MealPlan = mongoose.model('MealPlan');
 var User = mongoose.model('User');
 
 var sendJSONresponse = function(res, status, content) {
@@ -7,18 +7,18 @@ var sendJSONresponse = function(res, status, content) {
   res.json(content);
 };
 
-module.exports.diaryCreate = function(req, res) {
+module.exports.mealPlanCreate = function(req, res) {
   getUser(req, res, function (req, res, userEmail) {
   if (userEmail) {
-    Diary
+    MealPlan
       .findOne({email:userEmail})
       .exec(
-        function(err, diary) {
+        function(err, mealPlan) {
           if (err) {
             sendJSONresponse(res, 400, err);
           } else {
-            console.log(diary);
-            doAddDiary(req, res, diary, userEmail);
+            console.log(mealPlan);
+            doAddMealPlan(req, res, mealPlan, userEmail);
           }
         }
     );
@@ -29,7 +29,7 @@ module.exports.diaryCreate = function(req, res) {
 };
 
 var getUser = function(req, res, callback) {
-  console.log("Finding author with email " + req.payload.email);
+  console.log("Finding author with email " + req.payload.email + " ...");
   if (req.payload.email) {
     User
       .findOne({ email : req.payload.email })
@@ -53,23 +53,27 @@ var getUser = function(req, res, callback) {
 
 };
 
-var doAddDiary = function(req, res, diary, userEmail) {
-  if (!diary) {
-    sendJSONresponse(res, 404, "diary not found");
+var doAddMealPlan = function(req, res, mealPlan, userEmail) {
+  if (!mealPlan) {
+    sendJSONresponse(res, 404, "meal plan not found");
   } else {
-    diary.diaries.push({
-      meal: req.body.meal,
-      food: req.body.food
+    mealPlan.mealplans.push({
+      date: req.body.date,
+      breakfast: req.body.breakfast,
+      lunch: req.body.lunch,
+      dinner: req.body.dinner,
+      snack: req.body.snack
     });
-    diary.save(function(err, diary) {
-      var thisDiary;
+    mealPlan.save(function(err, mealPlan) {
+      var thisPlan;
       if (err) {
         console.log(err);
         sendJSONresponse(res, 400, err);
       } else {
-        console.log(diary);
-        thisDiary = diary.diarys[diary.diarys.length - 1];
-        sendJSONresponse(res, 201, thisDiary._id);
+        thisPlan = mealPlan.mealplans[mealPlan.mealplans.length - 1];
+        console.log(thisPlan);
+        console.log(mealPlan);
+        sendJSONresponse(res, 201, thisPlan._id);
       }
     });
   }

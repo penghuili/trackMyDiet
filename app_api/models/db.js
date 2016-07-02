@@ -39,9 +39,9 @@ process.on('SIGTERM', function() {
     });
 });
 
-require('./dietPrograms');
-require('./users');
-require('./products');
+require('./dietProgram');
+require('./user');
+require('./product');
 require('./shopInformation');
-require('./mealplan');
-require('./diaries');
+require('./mealPlan');
+require('./diary');

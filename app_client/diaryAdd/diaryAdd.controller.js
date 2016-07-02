@@ -5,6 +5,10 @@ angular
 function diaryAddCtrl (trackmydietData) {
   var vm = this;
   vm.pageHeader = "Add Diary";
+  vm.formError = "";
+  vm.meal = "";
+  vm.food1 = "";
+  vm.amount1 = "";
 
   vm.onSubmit = function() {
   vm.formData = {

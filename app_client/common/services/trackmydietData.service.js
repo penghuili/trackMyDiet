@@ -7,6 +7,14 @@ function trackmydietData ($http, authentication) {
     return $http.get('/api/dietPrograms');
   };
 
+  var addDietProgram = function(data) {
+    return $http.post('/api/dietPrograms', data, {
+      headers: {
+        Authorization: 'Bearer ' + authentication.getToken()
+        }
+     });
+  };
+
   var dietProgramById = function(dietprogramid) {
     return $http.get('/api/dietPrograms/' + dietprogramid);
   };
@@ -20,8 +28,8 @@ function trackmydietData ($http, authentication) {
      });
   };
 
-  var addDietProgram = function(data) {
-    return $http.post('/api/dietPrograms', data, {
+  var addMealPlan = function(data) {
+    return $http.post('/api/diary/plan', data, {
       headers: {
         Authorization: 'Bearer ' + authentication.getToken()
         }
@@ -32,6 +40,7 @@ function trackmydietData ($http, authentication) {
     dietPrograms: dietPrograms,
     dietProgramById: dietProgramById,
     addDiary: addDiary,
-    addDietProgram: addDietProgram
+    addDietProgram: addDietProgram,
+    addMealPlan: addMealPlan
   };
 }
