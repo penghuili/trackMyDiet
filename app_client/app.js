@@ -47,12 +47,22 @@ function config ($routeProvider, $locationProvider) {
         controller: 'diaryHomeCtrl',
         controllerAs: 'vm'
       })
-      .when('/mydiet/add', {
+      .when('/mydiet/diary', {
+        templateUrl: 'diaryAddHome/diaryAddHome.view.html',
+        controller: 'diaryAddHomeCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/mydiet/diary/add', {
         templateUrl: 'diaryAdd/diaryAdd.view.html',
         controller: 'diaryAddCtrl',
         controllerAs: 'vm'
       })
       .when('/mydiet/plan', {
+        templateUrl: 'diaryMealPlanHome/diaryMealPlanHome.view.html',
+        controller: 'diaryMealPlanHomeCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/mydiet/plan/add', {
         templateUrl: 'diaryMealPlan/diaryMealPlan.view.html',
         controller: 'diaryMealPlanCtrl',
         controllerAs: 'vm'

@@ -24,6 +24,8 @@ router.get('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsReadOne)
 //router.put('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsUpdateOne);
 //router.delete('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsDeleteOne);
 
+router.post('/products', auth, ctrlProducts.productCreate);
+
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 // router.post('/products', ctrlProducts.productCreate);

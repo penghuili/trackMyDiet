@@ -28,9 +28,9 @@ module.exports.dietProgramsList = function(req, res) {
 };
 
 module.exports.dietProgramsReadOne = function(req, res) {
-  console.log('Finding diet program details', req.params);
+  console.log('Finding diet program details ' + req.params.dietprogramid);
   if (req.params && req.params.dietprogramid) {
-    dietProgram
+    DietProgram
       .findById(req.params.dietprogramid)
       .exec(function(err, dietProgram) {
         if (!dietProgram) {

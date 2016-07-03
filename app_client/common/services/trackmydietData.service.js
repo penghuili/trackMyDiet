@@ -3,7 +3,7 @@ angular
   .service('trackmydietData', trackmydietData);
 
 function trackmydietData ($http, authentication) {
-  
+
   var dietPrograms = function() {
     return $http.get('/api/dietPrograms');
   };
@@ -29,10 +29,6 @@ function trackmydietData ($http, authentication) {
     return $http.get('/api/dietPrograms/' + dietprogramid);
   };
 
-  var addProduct = function(product) {
-    return $http.post('/api/products', product);
-  };
-
   var getProduct = function(productID) {
     return $http.get('/api/products/' + productID);
   };
@@ -44,6 +40,15 @@ function trackmydietData ($http, authentication) {
   var getShop = function (shopID) {
     return $http.get('/api/shops/' + shopID);
   }
+
+  var addProduct = function(data) {
+    console.log("addProduct in service");
+    return $http.post('/api/products', data, {
+      headers: {
+        Authorization: 'Bearer ' + authentication.getToken()
+      }
+    });
+  };
   
   var addDiary = function(data) {
     console.log("in addDiary");

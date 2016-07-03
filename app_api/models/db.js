@@ -43,5 +43,5 @@ require('./dietProgram');
 require('./user');
 require('./product');
 require('./shopInformation');
-require('./mealPlan');
+require('./mealplan');
 require('./diary');
