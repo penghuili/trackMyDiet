@@ -4,6 +4,7 @@ var ctrlDietPrograms = require('../controllers/dietPrograms');
 var ctrlAuth = require('../controllers/authentication');
 var ctrlDiaries = require('../controllers/diaries');
 var ctrlMealPlans = require('../controllers/mealPlans');
+var ctrlProducts = require('../controllers/products');
 var jwt = require('express-jwt');
 var auth = jwt({
 secret: process.env.JWT_SECRET,
@@ -16,6 +17,8 @@ router.post('/dietPrograms', auth, ctrlDietPrograms.dietProgramCreate);
 router.get('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsReadOne);
 //router.put('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsUpdateOne);
 //router.delete('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsDeleteOne);
+
+router.post('/products', auth, ctrlProducts.productCreate);
 
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
