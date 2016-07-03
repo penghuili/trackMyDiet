@@ -68,7 +68,7 @@ var doAddDiary = function(req, res, diary, userEmail) {
         sendJSONresponse(res, 400, err);
       } else {
         console.log(diary);
-        thisDiary = diary.diarys[diary.diarys.length - 1];
+        thisDiary = diary.diaries[diary.diaries.length - 1];
         sendJSONresponse(res, 201, thisDiary._id);
       }
     });
