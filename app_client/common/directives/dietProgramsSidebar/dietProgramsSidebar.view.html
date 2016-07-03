@@ -1,8 +1,6 @@
 <ul class="nav nav-pills nav-stacked">
     <li ng-show="dietvm.isLoggedIn"><a href="/#/dietPrograms/suggest">Suggest Me a Diet</a><li>
-    <li ng-show="dietvm.isLoggedIn"><a href="/#/dietPrograms/linkProducts">Link product to diet program</a><li>
     <li ng-hide="dietvm.isLoggedIn"><a href="/#/login?page={{dietvm.currentPath}}">Login to get Diet Suggestion</a><li>
     <li><p></p></li>
     <li ng-repeat="dietProgram in dietvm.data.dietPrograms"><a href="/#/dietPrograms/{{dietProgram._id}}">{{dietProgram.name}}</a></li>
 </ul>
-

@@ -6,6 +6,7 @@ var dietProgramSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    picture: String,
     loseWeight: Boolean,
     buildingMuscle: Boolean,
     keepShape: Boolean,
@@ -14,9 +15,7 @@ var dietProgramSchema = new mongoose.Schema({
     ageMax: Number,
     BMImin: Number,
     BMImax: Number,
-    pictures:[Buffer],
-    foodAllowed: [String],
-    recipe: [String],
+    foodAllowed: String,
     createdOn: {
         type: Date,
         "default": Date.now

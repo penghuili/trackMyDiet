@@ -16,7 +16,7 @@ var diaryItemSchema = new mongoose.Schema({
 
 var diarySchema = new mongoose.Schema({
 	email: {type: String, required: true, unique: true},
-	diarys: [diaryItemSchema]
+	diaries: [diaryItemSchema]
 });
 
 mongoose.model('Diary', diarySchema);

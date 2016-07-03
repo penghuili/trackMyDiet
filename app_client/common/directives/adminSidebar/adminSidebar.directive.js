@@ -4,7 +4,6 @@ angular
 
 function adminSidebar() {
     return {
-        templateUrl : "/common/directives/adminSidebar/adminSidebar.view.html",
-        controller: "adminSidebarCtrl as adminvm"
+        templateUrl : "/common/directives/adminSidebar/adminSidebar.view.html"
     };
 }

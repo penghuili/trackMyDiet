@@ -1,11 +1,36 @@
 var mongoose = require( 'mongoose' );
 
-var mealplanSchema = new mongoose.Schema({
-    date: Date,
-    breakfast: [{String:Number}],
-    snack: [{String:Number}],
-    lunch: [{String:Number}],
-    dinner: [{String:Number}]
+var breakfastSchema = ({
+  food: String,
+  amount: Number
 });
 
-mongoose.model('Mealplan', mealplanSchema);
+var lunchSchema = ({
+  food: String,
+  amount: Number
+});
+
+var dinnerSchema = ({
+  food: String,
+  amount: Number
+});
+
+var snackSchema = ({
+  food: String,
+  amount: Number
+});
+
+var mealplanItemSchema = ({
+  date: Number,
+  breakfast:[breakfastSchema],
+  lunch: [lunchSchema],
+  dinner: [dinnerSchema],
+  snack: [snackSchema]
+});
+
+var mealplanSchema = new mongoose.Schema({
+    email: String,
+    mealplans: [mealplanItemSchema]
+});
+
+mongoose.model('MealPlan', mealplanSchema);

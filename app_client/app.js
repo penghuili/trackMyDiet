@@ -72,14 +72,14 @@ function config ($routeProvider, $locationProvider) {
         controller: 'adminHomeCtrl',
         controllerAs: 'vm'
       })
-      .when('/product/add', {
-        templateUrl: 'adminProductAdd/productAdd.view.html',
-        controller: 'productAddCtrl',
-        controllerAs: 'vm'
-      })
-      .when('/dietProgram/add', {
+      .when('/admin/addDietProgram', {
         templateUrl: 'adminDietProgramAdd/dietProgramAdd.view.html',
         controller: 'dietProgramAddCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/admin/addProduct', {
+        templateUrl: 'adminProductAdd/productAdd.view.html',
+        controller: 'productAddCtrl',
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/'});
