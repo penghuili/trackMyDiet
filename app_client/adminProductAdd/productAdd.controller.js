@@ -31,4 +31,29 @@ function productAddCtrl (trackmydietData) {
             });
     };
 
+//     trackmydietData.dietPrograms()
+//         .success(function(data) {
+//             vm.data = { dietPrograms: data };
+//         })
+//         .error(function (e) {
+//             vm.message = "Sorry, something's gone wrong, please try again later";
+//         });
+//
+//     $scope.selection=[];
+// // toggle selection for a given employee by name
+//     $scope.toggleSelection = function toggleSelection(employeeName) {
+//         var idx = $scope.selection.indexOf(employeeName);
+//
+//         // is currently selected
+//         if (idx > -1) {
+//             $scope.selection.splice(idx, 1);
+//         }
+//
+//         // is newly selected
+//         else {
+//             $scope.selection.push(employeeName);
+//         }
+//     };
+
+
 }

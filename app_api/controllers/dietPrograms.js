@@ -55,6 +55,7 @@ module.exports.dietProgramsReadOne = function(req, res) {
 };
 
 module.exports.dietProgramCreate = function(req, res) {
+    console.log("in dietprogramecreate");
   getUser(req, res, function (req, res, userName) {
   if (userName === "admin") {
       doAddDietProgram(req, res);
@@ -106,6 +107,11 @@ var doAddDietProgram = function(req, res) {
     dietProgram.ageMax = req.body.ageMax;
     dietProgram.BMImin = req.body.BMImin;
     dietProgram.BMImax = req.body.BMImax;
+    dietProgram.loseWeight = req.body.loseWeight;
+    dietProgram.buildingMuscle = req.body.buildingMuscle;
+    dietProgram.keepShape = req.body.keepShape;
+    dietProgram.beBeautiful = req.body.beBeautiful;
+    dietProgram.foodAllowed = req.body.foodAllowed;
 
     dietProgram.save(function(err, dietProgram) {
       if (err) {

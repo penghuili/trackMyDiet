@@ -2,97 +2,107 @@
 
 <div class="content-section-a">
     <br/>
-  <div class="container">
-  <div class="row">
-    <div class="col-md-2">
-        <admin-sidebar></admin-sidebar>
-    </div>
-    <div class="col-md-10"><br/>
-                <div class="error">{{ vm.formError }}</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <admin-sidebar></admin-sidebar>
+            </div>
+            <div class="col-md-10"><br/>
+                <div class="error">{{ vm.message }}</div>
                 <h2>{{vm.pageHeader}}</h2>
-                <p>{{vm.pageContent}}</p>
-    <form class="form-horizontal" ng-submit="vm.onSubmit()">
-        <div class="form-group">
-            <label class="col-md-1" for="name">Name: </label>
-            <div class="col-md-2">
-                <input type="text" class="form-control" required ng-model="vm.formData.name">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-1" for="description">Description:</label>
-            <div class="col-md-2">
-                <textarea id="description" ng-model="vm.formData.description" class="form-control" name="description" rows="4" required></textarea>
-            </div>
-        </div>
+                <p>{{vm.pageContent}}
+                {{vm.formError}}
+                <form class="form-horizontal" ng-submit="vm.onSubmit()">
+                    <div class="form-group">
+                        <label class="col-md-1" for="name">Name: </label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" required id="name" required ng-model="vm.formData.name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1" for="description">Description:</label>
+                        <div class="col-md-2">
+                            <textarea id="description" class="form-control" rows="4" required ng-model="vm.formData.description"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1" for="picture">Lin to picture:</label>
+                        <div class="col-md-2">
+                            <input type="text" ng-model="picture">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1" for="minage">Min age:</label>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" min="6" ng-model="vm.formData.ageMin">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1" for="maxage">Max age:</label>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" max="120" ng-model="vm.formData.ageMax">
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            <label class="col-md-1" for="minage">Min age:</label>
-            <div class="col-md-2">
-                <input type="number" class="form-control" min="6" ng-model="vm.formData.ageMin">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-1" for="maxage">Max age:</label>
-            <div class="col-md-2">
-                <input type="number" class="form-control" max="120" ng-model="vm.formData.ageMax">
-            </div>
-        </div>
+                    <div class="form-group">
+                        <label class="col-md-1" for="minBMI">Min BMI:</label>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" min="6" ng-model="vm.formData.BMImin">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1" for="maxBMI">Max BMI:</label>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" max="50" ng-model="vm.formData.BMImax">
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            <label class="col-md-1" for="minBMI">Min BMI:</label>
-            <div class="col-md-2">
-                <input type="number" class="form-control" min="6" ng-model="vm.formData.BMImin">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-1" for="maxBMI">Max BMI:</label>
-            <div class="col-md-2">
-                <input type="number" class="form-control" max="50" ng-model="vm.formData.BMImin">
-            </div>
-        </div>
-
-
+                    <div class="form-group">
+                        <label class="col-md-1" for="foodallowed">Food allowed:</label>
+                        <div class="col-md-2">
+                            <textarea id="foodAllowerd" class="form-control" rows="4" required ng-model="vm.formData.foodAllowed"></textarea>
+                        </div>
+                    </div>
 
                     <h4><br/>Suitable for following diet motivations</h4>
-        <div class="form-group">
-            <div class="col-md-3">
-                <div class="checkbox">
-                    <label><input type="checkbox" ng-model="vm.formData.loseWeight"> Lose weight</label>
-                </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <div class="checkbox">
+                                <label><input type="checkbox" ng-model="vm.formData.loseWeight"> Lose weight</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <div class="checkbox">
+                                <label><input type="checkbox" ng-model="vm.formData.BuildingMuscle"> Building muscles</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <div class="checkbox">
+                                <label><input type="checkbox" ng-model="vm.formData.keepShape"> Keep body shape</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <div class="checkbox">
+                                <label><input type="checkbox" ng-model="vm.formData.beBeautiful"> Be beautiful</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2 pull-right">
+                            <button type="submit">Add diet program</button>
+                        </div>
+                    </div>
+                </form>
+                </p>
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-md-3">
-                <div class="checkbox">
-                    <label><input type="checkbox" ng-model="vm.formData.buildingMuscle"> Building muscles</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-3">
-                <div class="checkbox">
-                    <label><input type="checkbox" ng-model="vm.formData.keepShape"> Keep body shape</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-3">
-                <div class="checkbox">
-                    <label><input type="checkbox" ng-model="vm.formData.beBeautiful"> Be beautiful</label>
-                </div>
-            </div>
-        </div>
-
-
-       <div class="form-group">
-            <div class="col-md-2 pull-right">
-                <button type="submit">Add diet program</button>
-            </div>
-        </div>
-        </form>
     </div>
 </div>
 </div>
-</div>
-
 <footer-generic></footer-generic>

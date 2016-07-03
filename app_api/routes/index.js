@@ -27,5 +27,6 @@ router.post('/diary/add', auth, ctrlDiaries.diaryCreate);
 
 router.post('/diary/plan', auth, ctrlMealPlans.mealPlanCreate);
 
+router.post('/products', auth, ctrlProducts.productCreate);
 
 module.exports = router;
