@@ -4,6 +4,7 @@ var ctrlDietPrograms = require('../controllers/dietPrograms');
 var ctrlAuth = require('../controllers/authentication');
 var ctrlDiaries = require('../controllers/diaries');
 var ctrlMealPlans = require('../controllers/mealPlans');
+var ctrlProducts = require('../controllers/products');
 var jwt = require('express-jwt');
 var auth = jwt({
 secret: process.env.JWT_SECRET,
@@ -24,5 +25,6 @@ router.post('/diary/add', auth, ctrlDiaries.diaryCreate);
 
 router.post('/diary/plan', auth, ctrlMealPlans.mealPlanCreate);
 
+router.post('/products', auth, ctrlProducts.productCreate);
 
 module.exports = router;

@@ -2,12 +2,13 @@ var mongoose = require( 'mongoose' );
 
 var productSchema = new mongoose.Schema({
     name: {type: String, required: true},
-    kcal: [Number],
-    fat: [String],
-    glutenfree: [Boolean],
-    vegan: [Boolean],
-    vegetarian: [Boolean],
-    halal: [Boolean],
+    picture: String,
+    kcal: Number,
+    fat: Number,
+    glutenfree: Boolean,
+    vegan: Boolean,
+    vegetarian: Boolean,
+    halal: Boolean,
     dietProgram: [{type: mongoose.Schema.Types.ObjectId, ref: 'DietProgram'}],
     createdOn: {
         type: Date,
