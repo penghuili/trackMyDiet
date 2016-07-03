@@ -1,14 +1,4 @@
-#shouldbered {
-  color: red;
-}
-/*<<<<<<< HEAD*/
-
-/*#intro-header{*/
-  /*backgroud-image:url("bootstrap/img/ipad-bg.png");*/
-/*}*/
-/*=======*/
-
-/** Footer **/
+/** For sticky footer **/
 html, body {
   height: 100%;
 }

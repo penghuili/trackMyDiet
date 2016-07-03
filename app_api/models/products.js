@@ -11,6 +11,7 @@ var productSchema = new mongoose.Schema({
     vegetarian: Boolean,
     halal: Boolean,
     dietProgram: [{type: mongoose.Schema.Types.ObjectId, ref: 'DietProgram'}],
+    shopInfo: [{type: mongoose.Schema.Types.ObjectId, ref: 'ShopInformation'}],
     createdOn: {
         type: Date,
         "default": Date.now

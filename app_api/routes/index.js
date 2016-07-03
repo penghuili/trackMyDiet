@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 var ctrlDietPrograms = require('../controllers/dietPrograms');
 var ctrlAuth = require('../controllers/authentication');
-// var ctrlProducts = require('../controllers/products');
+var ctrlProducts = require('../controllers/products');
 var ctrlDiarys = require('../controllers/diaries');
+var ctrlShops = require('../controllers/shops');
 
 var jwt = require('express-jwt');
 var auth = jwt({
@@ -12,6 +13,9 @@ userProperty: 'payload'
 });
 
 router.get('/dietPrograms', ctrlDietPrograms.dietProgramsList);
+router.get('/products', ctrlProducts.getAllProducts);
+router.get('/products/:id', ctrlProducts.getProduct);
+router.get ('/shops/:shopid', ctrlShops.getShop);
 //router.post('/dietPrograms', ctrlDietPrograms.dietProgramsCreate);
 router.get('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsReadOne);
 //router.put('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsUpdateOne);

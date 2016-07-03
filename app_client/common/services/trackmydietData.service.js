@@ -3,6 +3,7 @@ angular
   .service('trackmydietData', trackmydietData);
 
 function trackmydietData ($http, authentication) {
+  
   var dietPrograms = function() {
     return $http.get('/api/dietPrograms');
   };
@@ -15,6 +16,18 @@ function trackmydietData ($http, authentication) {
     return $http.post('/api/products', product);
   };
 
+  var getProduct = function(productID) {
+    return $http.get('/api/products/' + productID);
+  };
+
+  var getAllProducts = function() {
+    return $http.get('/api/products');
+  };
+
+  var getShop = function (shopID) {
+    return $http.get('/api/shops/' + shopID);
+  }
+  
   var addDiary = function(data) {
     console.log("in addDiary");
     return $http.post('/api/diary/add', data, {
@@ -28,6 +41,9 @@ function trackmydietData ($http, authentication) {
     dietPrograms: dietPrograms,
     dietProgramById: dietProgramById,
     addProduct: addProduct,
-    addDiary: addDiary
-  };
+    addDiary: addDiary,
+    getAllProducts: getAllProducts,
+    getProduct: getProduct,
+    getShop: getShop
+};
 }
