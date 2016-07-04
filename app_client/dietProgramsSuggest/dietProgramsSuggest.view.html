@@ -1,21 +1,23 @@
 <navigation></navigation>
 
 <div class="content-section-a">
-<br />
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-2">
             <diet-programs-sidebar></diet-programs-sidebar>
         </div>
         <div class="col-md-10">
+            <br>
             <div class="error">{{ vm.message }}</div>
             <h2>{{vm.pageHeader}}</h2>
-            <form class="form-horizontal" ng-submit="vm.submitProgram()">
-                <h4><br />Your body conditions:</h4>
+            <form class="form-horizontal" role="form" action="" method="get">
+
+                <h4>Your body conditions:</h4>
                 <div class="form-group">
                     <label class="col-md-1" for="gender">Gender: </label>
                     <div class="col-md-2">
-                        <select class="form-control">
+                        <select class="form-control" id="gender">
                             <option value="female">Female</option>
                             <option value="male">Male</option>
                         </select>
@@ -30,83 +32,48 @@
                 <div class="form-group">
                     <label class="col-md-1" for="weight">Weight:</label>
                     <div class="col-md-2">
-                        <input type="text" class="form-control">
+                        <input type="number" step="0.1" class="form-control" id="weight" min="0" max="500" required>
                     </div>
                     <span>kg</span>
                 </div>
                 <div class="form-group">
                     <label class="col-md-1" for="height">Height:</label>
                     <div class="col-md-2">
-                        <input type="text" class="form-control">
+                        <input type="number" class="form-control" id="height" min="0" max="300" required>
                     </div>
                     <span>cm</span>
                 </div>
 
-                <h4><br />What is your motivation?</h4>
                 <div class="form-group">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
+                        <h4>What is your motivation?</h4>
                         <div class="checkbox">
-                            <label><input type="checkbox"> Lose weight</label>
+                            <label><input type="checkbox"> Lose weight</label><br><br>
+                            <label><input type="checkbox"> Building muscles</label><br><br>
+                            <label><input type="checkbox"> Keep body shape</label><br><br>
+                            <label><input type="checkbox"> Make friends</label><br><br>
+                            <label><input type="checkbox"> Be beautiful</label><br><br>
+                            <label>Other reasons:<input type="text" class="form-control form-inline input"></label>
                         </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Building muscles</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Keep body shape</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Make friends</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Be beautiful</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-
-                        <label class="col-md-2">Other reasons:</label>
-
-                    <div class="col-md-6">
-                        <input type="text" class="form-control">
                     </div>
                 </div>
 
-                <h4><br />What is your preferable duration of diet? </h4>
-                <div class="radio">
-                    <label><input type="radio" name="optradio">1 month</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio">6 month</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio">1 year</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio">2 years</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio">more than 2 years</label>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <h4>What is your preferable duration of diet? </h4>
+                        <div class="radio">
+                            <label><input type="radio" checked>1 month</label><br><br>
+                            <label><input type="radio">6 month</label><br><br>
+                            <label><input type="radio">1 year</label><br><br>
+                            <label><input type="radio">2 years</label><br><br>
+                            <label><input type="radio">more than 2 years</label><br><br>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-2 pull-right">
-                        <button type="submit" class="btn btn-default">Suggest Me a Diet</button>
+                        <button type="submit" class="btn btn-default" ng-click="vm.submitProgram()">Suggest Me a Diet</button>
                     </div>
                 </div>
             </form>

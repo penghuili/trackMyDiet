@@ -33,31 +33,31 @@
                     <div class="form-group">
                         <label class="col-md-1" for="minage">Min age:</label>
                         <div class="col-md-2">
-                            <input type="number" class="form-control" min="6" ng-model="vm.formData.ageMin">
+                            <input type="number" class="form-control" min="6" ng-model="vm.formData.ageMin" id="minage">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-1" for="maxage">Max age:</label>
                         <div class="col-md-2">
-                            <input type="number" class="form-control" max="120" ng-model="vm.formData.ageMax">
+                            <input type="number" class="form-control" max="120" ng-model="vm.formData.ageMax" id="maxage">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-1" for="minBMI">Min BMI:</label>
                         <div class="col-md-2">
-                            <input type="number" class="form-control" min="6" ng-model="vm.formData.BMImin">
+                            <input type="number" class="form-control" min="6" ng-model="vm.formData.BMImin" id="minBMI">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-1" for="maxBMI">Max BMI:</label>
                         <div class="col-md-2">
-                            <input type="number" class="form-control" max="50" ng-model="vm.formData.BMImax">
+                            <input type="number" class="form-control" max="50" ng-model="vm.formData.BMImax" id="maxBMI">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-1" for="foodallowed">Food allowed:</label>
                         <div class="col-md-2">
-                            <textarea id="foodAllowerd" class="form-control" rows="4" required ng-model="vm.formData.foodAllowed"></textarea>
+                            <textarea id="foodAllowerd" class="form-control" rows="4" required ng-model="vm.formData.foodAllowed" id="foodallowed"></textarea>
                         </div>
                     </div>
 
@@ -65,28 +65,10 @@
                     <div class="form-group">
                         <div class="col-md-3">
                             <div class="checkbox">
-                                <label><input type="checkbox" ng-model="vm.formData.loseWeight"> Lose weight</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <div class="checkbox">
-                                <label><input type="checkbox" ng-model="vm.formData.BuildingMuscle"> Building muscles</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <div class="checkbox">
-                                <label><input type="checkbox" ng-model="vm.formData.keepShape"> Keep body shape</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                            <div class="checkbox">
-                                <label><input type="checkbox" ng-model="vm.formData.beBeautiful"> Be beautiful</label>
+                                <label><input type="checkbox" ng-model="vm.formData.loseWeight"> Lose weight</label><br><br>
+                                <label><input type="checkbox" ng-model="vm.formData.BuildingMuscle"> Building muscles</label><br><br>
+                                <label><input type="checkbox" ng-model="vm.formData.keepShape"> Keep body shape</label><br><br>
+                                <label><input type="checkbox" ng-model="vm.formData.beBeautiful"> Be beautiful</label><br><br>
                             </div>
                         </div>
                     </div>

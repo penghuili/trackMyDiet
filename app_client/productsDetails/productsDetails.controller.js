@@ -10,18 +10,10 @@ angular
                 $scope.thisProduct = data;
                 $scope.pageHeader = $scope.thisProduct.name;
 
-                // TESTING 
-                console.log('This product');
-                console.log($scope.thisProduct);
-
                 for(var i = 0; i < $scope.thisProduct.dietProgram.length; i++) {
                     trackmydietData.dietProgramById($scope.thisProduct.dietProgram[i])
                         .success(function (data) {
                             $scope.dietPrograms.push(data);
-
-                            // TESTING
-                            console.log('Diet programs');
-                            console.log($scope.dietPrograms);
                         })
                         .error(function (e) {
                             $scope.message = "Sorry, diet programs are not found";
@@ -32,10 +24,6 @@ angular
                     trackmydietData.getShop($scope.thisProduct.shopInfo[j])
                         .success(function (data) {
                             $scope.shops.push(data);
-
-                            // TESTING
-                            console.log('Shops');
-                            console.log($scope.shops);
                         })
                         .error(function (e) {
                             $scope.message = "Sorry, shops are not found";
