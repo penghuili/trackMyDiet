@@ -15,7 +15,7 @@ var dietProgramSchema = new mongoose.Schema({
     ageMax: Number,
     BMImin: Number,
     BMImax: Number,
-    foodAllowed: String,
+    foodAllowed: [String],
     createdOn: {
         type: Date,
         "default": Date.now

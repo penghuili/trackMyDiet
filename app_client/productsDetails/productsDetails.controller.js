@@ -1,21 +1,21 @@
 angular
     .module('trackmydietApp')
     .controller('productsDetailsCtrl', function ($scope, trackmydietData, $routeParams){
-        
+
         $scope.dietPrograms = [];
         $scope.shops = [];
 
-        trackmydietData.getProduct($routeParams.id)
+        trackmydietData.getProductById($routeParams.id)
             .success(function(data) {
                 $scope.thisProduct = data;
                 $scope.pageHeader = $scope.thisProduct.name;
 
-                // TESTING 
+                // TESTING
                 console.log('This product');
                 console.log($scope.thisProduct);
 
                 for(var i = 0; i < $scope.thisProduct.dietProgram.length; i++) {
-                    trackmydietData.dietProgramById($scope.thisProduct.dietProgram[i])
+                    trackmydietData.getDietProgramById($scope.thisProduct.dietProgram[i])
                         .success(function (data) {
                             $scope.dietPrograms.push(data);
 
@@ -27,9 +27,9 @@ angular
                             $scope.message = "Sorry, diet programs are not found";
                         });
                 }
-                
+
                 for(var j = 0; j < $scope.thisProduct.shopInfo.length; j++) {
-                    trackmydietData.getShop($scope.thisProduct.shopInfo[j])
+                    trackmydietData.getShopById($scope.thisProduct.shopInfo[j])
                         .success(function (data) {
                             $scope.shops.push(data);
 

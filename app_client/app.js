@@ -12,24 +12,29 @@ function config ($routeProvider, $locationProvider) {
         controller: 'dietProgramsHomeCtrl',
         controllerAs: 'vm'
       })
-      .when('/dietPrograms/suggest', {
+      .when('/dietPrograms/:dietprogramid', {
+        templateUrl: 'dietProgramDetail/dietProgramDetail.view.html',
+        controller: 'dietProgramDetailCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/suggest', {
         templateUrl: 'dietProgramsSuggest/dietProgramsSuggest.view.html',
         controller: 'dietProgramsSuggestCtrl',
         controllerAs: 'vm'
       })
-      .when('/dietPrograms/suggest/result', {
+      .when('/suggest/result', {
         templateUrl: 'dietProgramsSuggestResult/dietProgramsSuggestResult.view.html',
         controller: 'dietProgramsSuggestResultCtrl',
         controllerAs: 'vm'
       })
-        .when('/dietPrograms/linkProducts', {
-          templateUrl: 'dietProgramsLinkProducts/dietProgramsLinkProducts.view.html',
-          controller: 'dietProgramsLinkProductsCtrl',
-          controllerAs: 'vm'
-        })
-      .when('/dietPrograms/:dietprogramid', {
-        templateUrl: 'dietProgramDetail/dietProgramDetail.view.html',
-        controller: 'dietProgramDetailCtrl',
+      .when ('/products', {
+        templateUrl: 'productsHome/productsHome.view.html',
+        controller: 'productsHomeCtrl',
+        controllerAs: 'vm'
+      })
+      .when ('/products/:id', {
+        templateUrl: 'productsDetails/productsDetails.view.html',
+        controller: 'productsDetailsCtrl',
         controllerAs: 'vm'
       })
       .when('/register', {
@@ -65,16 +70,6 @@ function config ($routeProvider, $locationProvider) {
       .when('/mydiet/plan/add', {
         templateUrl: 'diaryMealPlan/diaryMealPlan.view.html',
         controller: 'diaryMealPlanCtrl',
-        controllerAs: 'vm'
-      })
-      .when ('/products', {
-        templateUrl: 'productsHome/productsHome.view.html',
-        controller: 'productsHomeCtrl',
-        controllerAs: 'vm'
-      })
-      .when ('/products/:id', {
-        templateUrl: 'productsDetails/productsDetails.view.html',
-        controller: 'productsDetailsCtrl',
         controllerAs: 'vm'
       })
       .when('/admin', {

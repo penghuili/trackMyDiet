@@ -4,52 +4,47 @@ angular
 
 function trackmydietData ($http, authentication) {
 
-  var dietPrograms = function() {
+  var getDietPrograms = function() {
     return $http.get('/api/dietPrograms');
   };
 
+  var getDietProgramById = function(dietprogramid) {
+    return $http.get('/api/dietPrograms/' + dietprogramid);
+  };
+
   var addDietProgram = function(data) {
-    return $http.post('/api/dietPrograms', data, {
+    return $http.post('/api/dietProgram', data, {
       headers: {
         Authorization: 'Bearer ' + authentication.getToken()
         }
      });
   };
 
-  var addProduct = function(data) {
-    console.log("addProduct in service");
-    return $http.post('/api/products', data, {
-      headers: {
-        Authorization: 'Bearer ' + authentication.getToken()
-      }
-    });
-  };
-
-  var dietProgramById = function(dietprogramid) {
-    return $http.get('/api/dietPrograms/' + dietprogramid);
-  };
-
-  var getProduct = function(productID) {
-    return $http.get('/api/products/' + productID);
-  };
-
-  var getAllProducts = function() {
+  var getProducts = function() {
     return $http.get('/api/products');
   };
 
-  var getShop = function (shopID) {
-    return $http.get('/api/shops/' + shopID);
-  }
+  var getProductById = function(productid) {
+    return $http.get('/api/products/' + productid);
+  };
+
+  var getProductsByDietProgramName = function(dietName) {
+    return $http.get('/api/products/diet/' + dietName);
+  };
 
   var addProduct = function(data) {
     console.log("addProduct in service");
-    return $http.post('/api/products', data, {
+    return $http.post('/api/product', data, {
       headers: {
         Authorization: 'Bearer ' + authentication.getToken()
       }
     });
   };
-  
+
+  var getShopById = function (shopid) {
+    return $http.get('/api/shops/' + shopid);
+  };
+
   var addDiary = function(data) {
     console.log("in addDiary");
     return $http.post('/api/diary/add', data, {
@@ -68,14 +63,15 @@ function trackmydietData ($http, authentication) {
   };
 
   return {
-    dietPrograms: dietPrograms,
-    dietProgramById: dietProgramById,
-    addDiary: addDiary,
-    getAllProducts: getAllProducts,
-    getProduct: getProduct,
-    getShop: getShop,
+    getDietPrograms: getDietPrograms,
+    getDietProgramById: getDietProgramById,
     addDietProgram: addDietProgram,
-    addMealPlan: addMealPlan,
-    addProduct: addProduct
+    getProducts: getProducts,
+    getProductById: getProductById,
+    getProductsByDietProgramName: getProductsByDietProgramName,
+    addProduct: addProduct,
+    getShopById: getShopById,
+    addDiary: addDiary,
+    addMealPlan: addMealPlan
   };
 }

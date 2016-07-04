@@ -7,7 +7,7 @@
   vm.isLoggedIn = authentication.isLoggedIn();
   vm.currentPath = $location.path();
 
-    trackmydietData.dietPrograms()
+    trackmydietData.getDietPrograms()
       .success(function(data) {
         vm.data = { dietPrograms: data };
       })

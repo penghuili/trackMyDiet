@@ -4,7 +4,8 @@ angular
 
 function dietProgramsSuggestResultCtrl () {
   var vm = this;
-  vm.pageHeader =  "This Diet Program is best for you:";
-  vm.pageContent = "HMR Program";
+  vm.pageHeader =  "This Best Diet Program for you is:";
+  vm.id = localStorage.getItem("id");
+  vm.dietProgram = localStorage.getItem("name");
 
 }

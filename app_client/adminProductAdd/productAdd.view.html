@@ -8,7 +8,6 @@
                 <admin-sidebar></admin-sidebar>
             </div>
             <div class="col-md-10"><br />
-                <div class="error">{{ vm.message }}</div>
                 <h2>{{vm.pageHeader}}</h2>
                 <p>{{vm.pageContent}}</p>
                 <p>{{vm.formError}}</p>
@@ -17,6 +16,12 @@
                         <label class="col-md-1" for="name">Name: </label>
                         <div class="col-md-2">
                             <input type="text" class="form-control" id="name" ng-model="vm.formData.name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1" for="brand">brand: </label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control" id="brand" ng-model="vm.formData.brand" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -38,51 +43,40 @@
                         </div>
                     </div>
 
-                    <h4><br />Choose product characteristics</h4>
+                    <h4><br />Choose product characteristics:</h4>
                     <div class="form-group">
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <div class="checkbox">
                                 <label><input type="checkbox" ng-model="vm.formData.glutenfree"> Gluten free</label>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <div class="checkbox">
                                 <label><input type="checkbox" ng-model="vm.formData.vegan"> Vegan</label>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <div class="checkbox">
                                 <label><input type="checkbox" ng-model="vm.formData.vegetarian"> Vegetarian</label>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <div class="checkbox">
                                 <label><input type="checkbox" ng-model="vm.formData.halal"> Halal</label>
                             </div>
                         </div>
                     </div>
 
-                    <!--<h4><br />Assign product to diet program/s </h4>-->
-
-                        <!--<span ng-repeat="dietProgram in vm.data.dietPrograms">-->
-      <!--<label class="checkbox" for="{{dietProgram.name}}">-->
-        <!--<input type="checkbox" value="{{dietProgram.name}}" ng-checked="selection.indexOf(dietProgram.name) > -1" id="{{dietProgram.name}}" ng-click="toggleSelection(dietProgram.name)" "/>-->
-        <!--{{dietProgram.name}}-->
-      <!--</label>-->
-    <!--</span>-->
-
-                    <!-- <div ng-repeat="name in selection" class="selected-item">-->
-                    <!--  {{name}}-->
-                    <!-- </div>-->
-
+                    <h4><br />Choose related diet programs:</h4>
                     <div class="form-group">
-                        <div class="col-md-2 pull-right">
+                      <div class="col-md-5" ng-repeat="name in vm.dietProgramNames">
+                          <div class="checkbox">
+                              <label><input type="checkbox" id={{name.nameForId}}> {{name.name}}</label>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2 pull-center">
                             <button type="submit">Add product</button>
                         </div>
                     </div>
@@ -91,5 +85,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>

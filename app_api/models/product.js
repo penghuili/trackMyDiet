@@ -2,6 +2,7 @@ var mongoose = require( 'mongoose' );
 
 var productSchema = new mongoose.Schema({
     name: {type: String, required: true},
+    brand: String,
     picture: String,
     kcal: Number,
     fat: Number,
@@ -9,8 +10,7 @@ var productSchema = new mongoose.Schema({
     vegan: Boolean,
     vegetarian: Boolean,
     halal: Boolean,
-    dietProgram: [{type: mongoose.Schema.Types.ObjectId, ref: 'DietProgram'}],
-    shopInfo: [{type: mongoose.Schema.Types.ObjectId, ref: 'ShopInformation'}],
+    dietPrograms: [String],
     createdOn: {
         type: Date,
         "default": Date.now

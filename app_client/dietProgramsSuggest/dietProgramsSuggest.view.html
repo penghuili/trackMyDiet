@@ -10,12 +10,12 @@
         <div class="col-md-10">
             <div class="error">{{ vm.message }}</div>
             <h2>{{vm.pageHeader}}</h2>
-            <form class="form-horizontal" ng-submit="vm.submitProgram()">
+            <form class="form-horizontal" ng-submit="vm.onSubmit()">
                 <h4><br />Your body conditions:</h4>
                 <div class="form-group">
                     <label class="col-md-1" for="gender">Gender: </label>
                     <div class="col-md-2">
-                        <select class="form-control">
+                        <select class="form-control" ng-model="vm.formData.gender">
                             <option value="female">Female</option>
                             <option value="male">Male</option>
                         </select>
@@ -24,20 +24,20 @@
                 <div class="form-group">
                     <label class="col-md-1" for="age">Age:</label>
                     <div class="col-md-2">
-                        <input type="number" class="form-control" id="age" min="0" max="140" required>
+                        <input type="number" ng-model="vm.formData.age" class="form-control" id="age" min="0" max="140" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-1" for="weight">Weight:</label>
                     <div class="col-md-2">
-                        <input type="text" class="form-control">
+                        <input type="text" ng-model="vm.formData.weight" class="form-control">
                     </div>
                     <span>kg</span>
                 </div>
                 <div class="form-group">
                     <label class="col-md-1" for="height">Height:</label>
                     <div class="col-md-2">
-                        <input type="text" class="form-control">
+                        <input type="text" ng-model="vm.formData.height" class="form-control">
                     </div>
                     <span>cm</span>
                 </div>
@@ -46,35 +46,28 @@
                 <div class="form-group">
                     <div class="col-md-3">
                         <div class="checkbox">
-                            <label><input type="checkbox"> Lose weight</label>
+                            <label><input type="checkbox" ng-model="vm.formData.loseWeight"> Lose weight</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-3">
                         <div class="checkbox">
-                            <label><input type="checkbox"> Building muscles</label>
+                            <label><input type="checkbox" ng-model="vm.formData.buildingMuscle"> Building muscles</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-3">
                         <div class="checkbox">
-                            <label><input type="checkbox"> Keep body shape</label>
+                            <label><input type="checkbox" ng-model="vm.formData.keepShape"> Keep body shape</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-3">
                         <div class="checkbox">
-                            <label><input type="checkbox"> Make friends</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-3">
-                        <div class="checkbox">
-                            <label><input type="checkbox"> Be beautiful</label>
+                            <label><input type="checkbox" ng-model="vm.formData.beBeautiful"> Be beautiful</label>
                         </div>
                     </div>
                 </div>
@@ -83,29 +76,30 @@
                         <label class="col-md-2">Other reasons:</label>
 
                     <div class="col-md-6">
-                        <input type="text" class="form-control">
+                        <input type="text" ng-model="vm.formData.other" class="form-control">
                     </div>
                 </div>
 
                 <h4><br />What is your preferable duration of diet? </h4>
                 <div class="radio">
-                    <label><input type="radio" name="optradio">1 month</label>
+                    <label><input type="radio" ng-model="vm.formData.duration" value="1 month">1 month</label>
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="optradio">6 month</label>
+                    <label><input type="radio"  ng-model="vm.formData.duration" value="6 month">6 month</label>
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="optradio">1 year</label>
+                    <label><input type="radio"  ng-model="vm.formData.duration" value="1 year">1 year</label>
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="optradio">2 years</label>
+                    <label><input type="radio"  ng-model="vm.formData.duration" value="2 years">2 years</label>
                 </div>
                 <div class="radio">
-                    <label><input type="radio" name="optradio">more than 2 years</label>
+                    <label><input type="radio"  ng-model="vm.formData.duration" value="more than 2 years">more than 2 years</label>
                 </div>
 
+                <br><br>
                 <div class="form-group">
-                    <div class="col-md-2 pull-right">
+                    <div class="col-md-2 pull-center">
                         <button type="submit" class="btn btn-default">Suggest Me a Diet</button>
                     </div>
                 </div>

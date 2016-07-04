@@ -7,10 +7,10 @@ var sendJSONresponse = function(res, status, content) {
   res.json(content);
 };
 
-module.exports.dietProgramsList = function(req, res) {
-  console.log('Finding diet program details', req.params);
+module.exports.getDietPrograms = function(req, res) {
+  console.log('Finding diet programs ...');
   DietProgram
-      .find().limit(5)
+      .find()
       .exec(function(err, dietPrograms) {
         if (!dietPrograms) {
           sendJSONresponse(res, 404, {
@@ -27,7 +27,7 @@ module.exports.dietProgramsList = function(req, res) {
       });
 };
 
-module.exports.dietProgramsReadOne = function(req, res) {
+module.exports.getDietProgramById = function(req, res) {
   console.log('Finding diet program details ' + req.params.dietprogramid);
   if (req.params && req.params.dietprogramid) {
     DietProgram
@@ -99,6 +99,7 @@ var doAddDietProgram = function(req, res) {
     var dietProgram = new DietProgram();
     dietProgram.name = req.body.name;
     dietProgram.description = req.body.description;
+    dietProgram.picture = req.body.picture;
     dietProgram.loseWeight = req.body.loseWeight;
     dietProgram.buildingMuscle = req.body.buildingMuscle;
     dietProgram.keepShape = req.body.keepShape;
@@ -107,10 +108,6 @@ var doAddDietProgram = function(req, res) {
     dietProgram.ageMax = req.body.ageMax;
     dietProgram.BMImin = req.body.BMImin;
     dietProgram.BMImax = req.body.BMImax;
-    dietProgram.loseWeight = req.body.loseWeight;
-    dietProgram.buildingMuscle = req.body.buildingMuscle;
-    dietProgram.keepShape = req.body.keepShape;
-    dietProgram.beBeautiful = req.body.beBeautiful;
     dietProgram.foodAllowed = req.body.foodAllowed;
 
     dietProgram.save(function(err, dietProgram) {

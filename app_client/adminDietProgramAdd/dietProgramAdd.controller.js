@@ -7,9 +7,14 @@ function dietProgramAddCtrl (trackmydietData) {
   vm.pageHeader = "Add Diet Program";
   vm.formError = "";
   vm.formData = {};
+  vm.formData.loseWeight = false;
+  vm.formData.buildingMuscle = false;
+  vm.formData.keepShape = false;
+  vm.formData.beBeautiful = false;
 
   vm.onSubmit = function() {
   	vm.formError = "";
+    vm.formData.foodAllowed = vm.foodAllowed.split(",");
     if (!vm.formData.name || !vm.formData.description) {
       vm.formError = "Name and description are required";
       return false;
@@ -30,30 +35,4 @@ function dietProgramAddCtrl (trackmydietData) {
           vm.formError = data;
         });
   };
-}
-
-var counter = 1;
-var limit = 10;
-function addInput(divName){
-  if (counter == limit)  {
-    alert("You have reached the limit of adding " + counter + " inputs");
-  }
-  else {
-    var newdiv = document.createElement('div');
-    newdiv.innerHTML = "Food " + (counter + 1) + " <br><input type='text' name='myInputs[]'>";
-    document.getElementById(divName).appendChild(newdiv);
-    counter++;
-  }
-}
-
-function addPicture(divName){
-  if (counter == limit)  {
-    alert("You have reached the limit of adding " + counter + " pictures");
-  }
-  else {
-    var newdiv = document.createElement('div');
-    newdiv.innerHTML = "Picture " + (counter + 1) + " <br><input name='picture' type='file' size='50' accept='image'>";
-    document.getElementById(divName).appendChild(newdiv);
-    counter++;
-  }
 }

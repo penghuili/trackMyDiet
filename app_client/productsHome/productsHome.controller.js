@@ -5,7 +5,7 @@ angular
         var vm = this;
         vm.pageHeader =  "Products";
 
-        trackmydietData.getAllProducts()
+        trackmydietData.getProducts()
             .success(function(data) {
                 $scope.products = data;
                 console.log('products');
@@ -14,7 +14,7 @@ angular
             .error(function (e) {
                 vm.message = "Sorry, something's gone wrong, please try again later";
             });
-         
+
             // $scope.products = [
         //     {id: 0, name: "product1 milk", brand: "REWE", image:"https://img.rewe-static.de/2165358/22374095_digital-image.png?resize=260px:260px", kcal: 100, fat:"2%",glutenfree: true, kcal: 100, vegan:true, vegetarian:true, halal:true, dietProgram:"123"},
         //     {id: 1, name: "product2", brand: "qwerty", image:"https://img.rewe-static.de/6337279/3559990_digital-image.png?resize=260px:260px", kcal: 100, kcal: 100, vegan:true, vegetarian:true, halal:true, dietProgram:"123"},

@@ -13,27 +13,21 @@ secret: process.env.JWT_SECRET,
 userProperty: 'payload'
 });
 
-router.get('/dietPrograms', ctrlDietPrograms.dietProgramsList);
+router.get('/dietPrograms', ctrlDietPrograms.getDietPrograms);
+router.get('/dietPrograms/:dietprogramid', ctrlDietPrograms.getDietProgramById);
+router.post('/dietProgram', auth, ctrlDietPrograms.dietProgramCreate);
 
-router.get('/products', ctrlProducts.getAllProducts);
-router.get('/products/:id', ctrlProducts.getProduct);
-router.get ('/shops/:shopid', ctrlShops.getShop);
-//router.post('/dietPrograms', ctrlDietPrograms.dietProgramsCreate);
-router.post('/dietPrograms', auth, ctrlDietPrograms.dietProgramCreate);
-router.get('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsReadOne);
-//router.put('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsUpdateOne);
-//router.delete('/dietPrograms/:dietprogramid', ctrlDietPrograms.dietProgramsDeleteOne);
+router.get('/products', ctrlProducts.getProducts);
+router.get('/products/:id', ctrlProducts.getProductById);
+router.get('/products/diet/:dietName', ctrlProducts.getProductsByDietProgramName);
+router.post('/product', auth, ctrlProducts.productCreate);
 
-router.post('/products', auth, ctrlProducts.productCreate);
+router.get ('/shops/:shopid', ctrlShops.getShopById);
 
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
-// router.post('/products', ctrlProducts.productCreate);
 
 router.post('/diary/add', auth, ctrlDiaries.diaryCreate);
-
 router.post('/diary/plan', auth, ctrlMealPlans.mealPlanCreate);
-
-router.post('/products', auth, ctrlProducts.productCreate);
 
 module.exports = router;
