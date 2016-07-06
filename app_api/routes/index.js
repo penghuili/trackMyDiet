@@ -27,6 +27,7 @@ router.get ('/shops/:shopid', ctrlShops.getShopById);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
+router.post('/diaries',auth, ctrlDiaries.getDiaries);
 router.post('/diary/add', auth, ctrlDiaries.diaryCreate);
 router.post('/diary/plan', auth, ctrlMealPlans.mealPlanCreate);
 

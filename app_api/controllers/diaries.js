@@ -57,10 +57,21 @@ var doAddDiary = function(req, res, diary, userEmail) {
   if (!diary) {
     sendJSONresponse(res, 404, "diary not found");
   } else {
-    diary.diaries.push({
-      meal: req.body.meal,
-      food: req.body.food
-    });
+    var len = diary.diaries.length;
+    if(len > 0 && diary.diaries[len - 1]["createdOn"] === req.body.createdOn) {
+      diary.diaries[len - 1].meals.push({
+        meal: req.body.meals.meal,
+        food: req.body.meals.food
+      });
+    } else {
+      diary.diaries.push({
+        createdOn: req.body.createdOn,
+        meals:[{
+          meal: req.body.meals.meal,
+          food: req.body.meals.food
+        }]
+      });
+    }
     diary.save(function(err, diary) {
       var thisDiary;
       if (err) {
@@ -73,4 +84,26 @@ var doAddDiary = function(req, res, diary, userEmail) {
       }
     });
   }
+};
+
+
+module.exports.getDiaries = function(req, res) {
+  getUser(req, res, function (req, res, userEmail) {
+  if (userEmail) {
+    Diary
+      .findOne({email:userEmail})
+      .exec(
+        function(err, diary) {
+          if (err) {
+            sendJSONresponse(res, 400, err);
+          } else {
+            console.log(diary);
+            sendJSONresponse(res, 201, diary.diaries);
+          }
+        }
+    );
+  } else {
+    sendJSONresponse(res, 404, "please login");
+  }
+  });
 };

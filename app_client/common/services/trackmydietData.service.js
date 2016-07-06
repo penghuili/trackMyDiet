@@ -45,6 +45,14 @@ function trackmydietData ($http, authentication) {
     return $http.get('/api/shops/' + shopid);
   };
 
+  var getDiaries = function() {
+    return $http.post('/api/diaries', null, {
+      headers: {
+        Authorization: 'Bearer ' + authentication.getToken()
+      }
+    });
+  };
+
   var addDiary = function(data) {
     console.log("in addDiary");
     return $http.post('/api/diary/add', data, {
@@ -71,6 +79,7 @@ function trackmydietData ($http, authentication) {
     getProductsByDietProgramName: getProductsByDietProgramName,
     addProduct: addProduct,
     getShopById: getShopById,
+    getDiaries: getDiaries,
     addDiary: addDiary,
     addMealPlan: addMealPlan
   };

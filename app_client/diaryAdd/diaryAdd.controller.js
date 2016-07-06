@@ -16,16 +16,20 @@ function diaryAddCtrl (trackmydietData) {
       var amount = $("#amount"+j).val();
       foodArr.push({name: food, amount: amount});
     }
+    vm.i = 2;
     vm.formData = {
-      meal: vm.meal,
-      food: foodArr
+      createdOn: vm.parseCreatedOn(vm.date),
+      meals: {
+        meal: vm.meal,
+        food: foodArr
+      }
     };
     	vm.formError = "";
       if (!vm.meal) {
         vm.formError = "All fields required, please try again";
         return false;
       } else {
-        console.log(vm.formData.food[0]);
+        
         vm.doAddDiary(vm.formData);
         }
     };
@@ -41,6 +45,10 @@ function diaryAddCtrl (trackmydietData) {
         });
   };
 
+  vm.parseCreatedOn = function(date) {
+    var timestamp = new Date(date);
+    return timestamp.getFullYear() + "/" + (timestamp.getMonth() + 1) + "/" + timestamp.getDate();
+  };
 
   vm.addInput = function() {
     var $submitFoodBtn = $("#submitFood");

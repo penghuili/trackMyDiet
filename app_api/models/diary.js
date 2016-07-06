@@ -5,18 +5,19 @@ var diaryFoodSchema = new mongoose.Schema({
     amount: Number
 });
 
-var diaryItemSchema = new mongoose.Schema({
-    createdOn: {
-        type: Date,
-        "default": Date.now
-    },
-    meal: String,
-    food: [diaryFoodSchema]
+var diaryMealSchema = new mongoose.Schema({
+  meal: String,
+  food: [diaryFoodSchema]
+});
+
+var diaryDaySchema = new mongoose.Schema({
+    createdOn: String,
+    meals: [diaryMealSchema]
 });
 
 var diarySchema = new mongoose.Schema({
 	email: {type: String, required: true, unique: true},
-	diaries: [diaryItemSchema]
+	diaries: [diaryDaySchema]
 });
 
 mongoose.model('Diary', diarySchema);

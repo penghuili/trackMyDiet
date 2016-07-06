@@ -1,15 +1,13 @@
 <navigation></navigation>
 
-<div class="content-section-a">
-<br />
-<div class="container">
+<div class="container" style="padding-top:30px;">
     <div class="row">
         <div class="col-md-2">
             <diet-programs-sidebar></diet-programs-sidebar>
         </div>
         <div class="col-md-10">
             <div class="error">{{ vm.message }}</div>
-            <h2>{{vm.pageHeader}}</h2>
+            <div class="page-header"><h2>{{vm.pageHeader}}</h2></div>
             <form class="form-horizontal" ng-submit="vm.onSubmit()">
                 <h4><br />Your body conditions:</h4>
                 <div class="form-group">
@@ -104,8 +102,6 @@
                     </div>
                 </div>
             </form>
-</div>
-</div>
 </div>
 </div>
 </div>

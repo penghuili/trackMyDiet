@@ -1,18 +1,40 @@
 <navigation></navigation>
 
-<div class="content-section-a">
-<br />
-<div class="container">
+<div class="container" style="padding-top: 30px;">
 <div class="row">
 <div class="col-md-2">
 <diary-sidebar></diary-sidebar>
 </div>
-<div class="col-md-10"><br />
-<div class="error">{{ vm.message }}</div>
-  <h2>{{vm.pageHeader}}</h2>
-  <p>{{vm.pageContent}}</p>
-  <a href="mydiet/diary/add">Add a diary</a>
-</div>
+<div class="col-md-10">
+  <div class="page-header"><h2>{{vm.pageHeader}}</h2></div>
+  <a href="mydiet/diary/add" class="btn btn-primary" role="button">
+    <span class='glyphicon glyphicon-plus'></span> Add Diary
+  </a>
+  <div class="alert alert-info col-md-4 pull-right">You have kept &nbsp;
+    <span class="badge">{{vm.days}}
+    </span>
+    &nbsp; days of diary.
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+    <div class="col-md-12">
+    <div class="panel panel-primary" ng-repeat="diary in vm.diaries">
+      <div class="panel-heading">
+        <h3>{{diary.createdOn}}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-3" ng-repeat="meal in diary.meals">
+          <h4>{{meal.meal}}</h4>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info" ng-repeat="food in meal.food">
+              {{food.name}} - {{food.amount}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 </div>

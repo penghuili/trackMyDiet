@@ -1,6 +1,6 @@
-<ul class="nav nav-pills nav-stacked">
-    <li ng-show="dietvm.isLoggedIn"><a href="/#/suggest">Suggest Me a Diet</a><li>
-    <li ng-hide="dietvm.isLoggedIn"><a href="/#/login?page={{dietvm.currentPath}}">Login to get Diet Suggestion</a><li>
-    <li><p></p></li>
-    <li ng-repeat="dietProgram in dietvm.data.dietPrograms"><a href="/#/dietPrograms/{{dietProgram._id}}">{{dietProgram.name}}</a></li>
+<ul class="list-group" style="padding-top:48px;">
+    <li ng-show="dietvm.isLoggedIn" class="list-group-item list-group-item-info"><a href="/#/suggest">Suggest Me a Diet</a></li>
+    <li ng-hide="dietvm.isLoggedIn" class="list-group-item list-group-item-info"><a href="/#/login?page={{dietvm.currentPath}}">Login to get Diet Suggestion</a></li>
+
+    <li ng-repeat="dietProgram in dietvm.data.dietPrograms" class="list-group-item list-group-item-info"><a href="/#/dietPrograms/{{dietProgram._id}}">{{dietProgram.name}}</a></li>
 </ul>

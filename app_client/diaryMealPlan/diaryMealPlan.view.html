@@ -1,82 +1,83 @@
 <navigation></navigation>
 
-<div class="content-section-a">
-<br />
-<div class="container">
+<div class="container" style="padding-top: 30px;">
     <div class="row">
         <div class="col-md-2">
             <diary-sidebar></diary-sidebar>
         </div>
         <div class="col-md-10">
-            <h2>{{vm.pageHeader}}</h2>
+            <div class="page-header"><h2>{{vm.pageHeader}}</h2></div>
             <p>{{vm.formError}}</p>
             <form class="form-horizontal" ng-submit="vm.onSubmit()">
-                <label for="date" class="col-md-1">Date: </label>
-                <input type="date" id="date" ng-model="vm.date">
-                <h3>Breakfast</h3>
+              <div class="form-group">
+                <label for="date" class="col-md-2">Date: </label>
+                <div class="col-md-3">
+                  <input type="date" id="date" class="form-control" ng-model="vm.date" required>
+                </div>
+              </div>
+
+                <h4>Breakfast</h4>
                 <div class="form-group">
-                    <label for="food1" class="col-md-2">I will eat: </label>
+                    <label for="breakfast-food1" class="col-md-2">I will eat: </label>
                     <div class="col-md-2">
-                        <input class="form-control" id="food1" ng-model="vm.breakfast.food1"></input>
+                        <input class="form-control" id="breakfast-food1" required></input>
                     </div>
-                    <label for="amount1" class="col-md-2">And how many: </label>
+                    <label for="breakfast-amount1" class="col-md-2">And how many: </label>
                     <div class="col-md-2">
-                        <input class="form-control" id="amount1" ng-model="vm.breakfast.amount1"></input>
+                        <input class="form-control" id="breakfast-amount1" required></input>
                     </div>
-                        <button type="button" class="btn btn-default btn-sm" >
-                          More
+                        <button type="button" id="breakfastAdd" ng-click="vm.addInput('breakfast')" class="btn btn-default btn-sm" >
+                          <span class='glyphicon glyphicon-plus'></span> More
                         </button>
                 </div>
-                <h3>Lunch</h3>
+                <h4>Lunch</h4>
                 <div class="form-group">
-                    <label for="food1" class="col-md-2">I will eat: </label>
+                    <label for="lunch-food1" class="col-md-2">I will eat: </label>
                     <div class="col-md-2">
-                        <input class="form-control" id="food1" ng-model="vm.lunch.food1"></input>
+                        <input class="form-control" id="lunch-food1" required></input>
                     </div>
-                    <label for="amount1" class="col-md-2">And how many: </label>
+                    <label for="lunch-amount1" class="col-md-2">And how many: </label>
                     <div class="col-md-2">
-                        <input class="form-control" id="amount1" ng-model="vm.lunch.amount1"></input>
+                        <input class="form-control" id="lunch-amount1" required></input>
                     </div>
-                        <button type="button" class="btn btn-default btn-sm" >
-                          More
+                        <button type="button" id="lunchAdd" ng-click="vm.addInput('lunch')" class="btn btn-default btn-sm" >
+                          <span class='glyphicon glyphicon-plus'></span> More
                         </button>
                 </div>
-                <h3>Dinner</h3>
+                <h4>Dinner</h4>
                 <div class="form-group">
-                    <label for="food1" class="col-md-2">I will eat: </label>
+                    <label for="dinner-food1" class="col-md-2">I will eat: </label>
                     <div class="col-md-2">
-                        <input class="form-control" id="food1" ng-model="vm.dinner.food1"></input>
+                        <input class="form-control" id="dinner-food1" required></input>
                     </div>
-                    <label for="amount1" class="col-md-2">And how many: </label>
+                    <label for="dinner-amount1" class="col-md-2">And how many: </label>
                     <div class="col-md-2">
-                        <input class="form-control" id="amount1" ng-model="vm.dinner.amount1"></input>
+                        <input class="form-control" id="dinner-amount1" required></input>
                     </div>
-                        <button type="button" class="btn btn-default btn-sm" >
-                          More
+                        <button type="button" id="dinnerAdd" ng-click="vm.addInput('dinner')" class="btn btn-default btn-sm" >
+                          <span class='glyphicon glyphicon-plus'></span> More
                         </button>
                 </div>
-                <h3>Snack</h3>
+                <h4>Snack</h4>
                 <div class="form-group">
-                    <label for="food1" class="col-md-2">I will eat: </label>
+                    <label for="snack-food1" class="col-md-2">I will eat: </label>
                     <div class="col-md-2">
-                        <input class="form-control" id="food1" ng-model="vm.snack.food1"></input>
+                        <input class="form-control" id="snack-food1" required></input>
                     </div>
-                    <label for="amount1" class="col-md-2">And how many: </label>
+                    <label for="snack-amount1" class="col-md-2">And how many: </label>
                     <div class="col-md-2">
-                        <input class="form-control" id="amount1" ng-model="vm.snack.amount1"></input>
+                        <input class="form-control" id="snack-amount1" required></input>
                     </div>
-                        <button type="button" class="btn btn-default btn-sm" >
-                          More
+                        <button type="button" id="snackAdd" ng-click="vm.addInput('snack')" class="btn btn-default btn-sm" >
+                          <span class='glyphicon glyphicon-plus'></span> More
                         </button>
                 </div>
                 <div class="form-group">
                     <div class="col-md-2 pull-center">
-                        <button type="submit" class="btn btn-default">Finish</button>
+                        <button type="submit" class="btn btn-primary">Finish</button>
                     </div>
                 </div>
             </form>
 </div>
 </div>
 </div>
-</div>
-

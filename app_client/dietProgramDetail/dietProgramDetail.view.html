@@ -1,15 +1,13 @@
 <navigation></navigation>
 
-<div class="content-section-a">
-<br />
-<div class="container">
+<div class="container" style="padding-top:30px;">
 <div class="row">
 <div class="col-md-2">
 <diet-programs-sidebar></diet-programs-sidebar>
 </div>
-<div class="col-md-10"><br />
+<div class="col-md-10">
 <p class="error">{{ vm.message }}</p>
-  <h1>{{vm.data.dietProgram.name}}</h1>
+  <div class="page-header"><h2>{{vm.data.dietProgram.name}}</h2></div>
 <div class="container">
   <div class="row">
     <div class="col-md-10">
@@ -26,7 +24,7 @@
 						<br>
 
             <div class="col-md-offset-1">
-              <img class="img-responsive" src="{{vm.data.dietProgram.picture}}" alt="weightwatchers">
+              <img class="img-responsive" src="{{vm.data.dietProgram.picture}}" alt="{{vm.data.dietProgram.name}}">
             </div>
               <p>{{vm.data.dietProgram.description}}</p>
               <p>You want to know more about {{vm.data.dietProgram.name}}?
@@ -120,7 +118,6 @@
     </div>
 </div>
 
-</div>
 </div>
 </div>
 </div>
